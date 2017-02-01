@@ -1,3 +1,4 @@
+
 import org.deeplearning4j.models.embeddings.loader.WordVectorSerializer;
 import org.deeplearning4j.models.embeddings.wordvectors.WordVectors;
 
@@ -17,11 +18,11 @@ public class CCGMorphologyLearner {
     public static String[] nLogicalCategories = {"NPL", "LOC", "DAT", "ACC", "GEN", "P1SG", "P2SG", "P3SG", "P1PL", "P2PL", "P3PL"};
     public static String[] vLogicalCategories = {"PAST", "PROG", "FUT", "AOR", "NARR", "A1SG", "A2SG", "A1PL", "A2PL", "A3PL"};
     public static String[] LogicalCategories = {"NPL", "LOC", "DAT", "ACC", "GEN", "P1SG", "P2SG", "P3SG", "P1PL", "P2PL",
-            "P3PL", "PAST", "PROG", "FUT", "AOR", "NARR", "A1SG", "A2SG", "A1PL", "A2PL", "A3PL"};
+        "P3PL", "PAST", "PROG", "FUT", "AOR", "NARR", "A1SG", "A2SG", "A1PL", "A2PL", "A3PL"};
 
     static {
         try {
-            vectors = WordVectorSerializer.loadTxtVectors(new File("/Users/ahmet/Desktop/MorphologySoftware/word2vec/turkce"));
+            vectors = WordVectorSerializer.loadTxtVectors(new File("/home/master/Desktop/morph-pro/vectors/turkce.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -80,8 +81,8 @@ public class CCGMorphologyLearner {
             segmentations.add(head + " " + tail);
         } else if (tail.length() == 0) {
             segmentations.add(head);
-        } else if (tail.length() == 1) {
-            segmentations.add(head + " " + tail);
+//        } else if (tail.length() == 1) {
+//            segmentations.add(head + " " + tail);
         } else {
             for (int i = 1; i < tail.length() + 1; i++) {
                 String morpheme = tail.substring(0, i);
@@ -101,10 +102,13 @@ public class CCGMorphologyLearner {
 
         for (String meaning : semantics) {
 
-            tmp = tmp + suffix + " s := np/np: \\x.!" + meaning + " x;" + "\n" +
-                    suffix + " s := np\\np: \\x.!" + meaning + " x;" + "\n" +
-                    suffix + " s := vp/vp: \\x.!" + meaning + " x;" + "\n" +
-                    suffix + " s := np\\np: \\x.!" + meaning + " x;" + "\n\n";
+            tmp = tmp + suffix + " s := np/np: \\x.!" + meaning + " x;" + "\n"
+                    + suffix + " s := np\\np: \\x.!" + meaning + " x;" + "\n"
+                    + suffix + " s := vp/vp: \\x.!" + meaning + " x;" + "\n"
+                    + suffix + " s := vp\\vp: \\x.!" + meaning + " x;" + "\n\n";
+
+//            tmp = tmp + suffix + " s := np/np: \\x.!" + meaning + " x;" + "\n" +
+//                    suffix + " s := np\\np: \\x.!" + meaning + " x;" + "\n\n";
         }
 
         return tmp;
@@ -112,10 +116,10 @@ public class CCGMorphologyLearner {
 
     public static void main(String[] args) throws IOException {
 
-        String nFile = "/Users/ahmet/Desktop/CCGlab/research/final/nouns";
-        String vFile = "/Users/ahmet/Desktop/CCGlab/research/final/verbs";
+        String nFile = "/home/master/Desktop/ccg_project/final/nouns_f";
+        String vFile = "/home/master/Desktop/ccg_project/final/verbs_f";
 
-        BufferedReader reader = new BufferedReader(new FileReader(nFile));
+        BufferedReader reader = new BufferedReader(new FileReader(vFile));
         FileWriter ccg = new FileWriter(nFile + ".ccg");
         FileWriter sup = new FileWriter(nFile + ".sup");
 
