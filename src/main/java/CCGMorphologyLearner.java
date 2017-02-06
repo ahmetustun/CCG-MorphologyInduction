@@ -44,7 +44,7 @@ public class CCGMorphologyLearner {
             cp = cp + ")";
         }
 
-        lf = lf + tags[0] + cp;
+        lf = lf + "\"" + tags[0] + "\"" + cp;
         return lf;
     }
 
@@ -119,9 +119,11 @@ public class CCGMorphologyLearner {
         String nFile = "/home/master/Desktop/ccg_project/final/nouns_f";
         String vFile = "/home/master/Desktop/ccg_project/final/verbs_f";
 
-        BufferedReader reader = new BufferedReader(new FileReader(vFile));
-        FileWriter ccg = new FileWriter(nFile + ".ccg");
-        FileWriter sup = new FileWriter(nFile + ".sup");
+        String tFile = "/home/master/Desktop/ccg_project/final/f6/test";
+
+        BufferedReader reader = new BufferedReader(new FileReader(tFile));
+        FileWriter ccg = new FileWriter(tFile + ".ccg");
+        FileWriter sup = new FileWriter(tFile + ".sup");
 
         HashSet<String> suffixes = new HashSet<>();
         String supString = "(\n";
@@ -154,7 +156,7 @@ public class CCGMorphologyLearner {
         sup.close();
 
         for (String l : suffixes) {
-            ccg.write(getLexcialEntry(l, nLogicalCategories));
+            ccg.write(getLexcialEntry(l, LogicalCategories));
         }
         ccg.close();
     }
