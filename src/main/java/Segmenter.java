@@ -10,24 +10,22 @@ import java.util.*;
 public class Segmenter {
 
     public static WordVectors vectors;
-    public static double threshold = 0.25;
+    public static double threshold = 0.45;
 
-    /*
     static {
         try {
-            vectors = WordVectorSerializer.loadTxtVectors(new File("/Users/ahmet/Desktop/MorphologySoftware/word2vec/turkce"));
+            vectors = WordVectorSerializer.loadTxtVectors(new File("C:\\Users\\ahmetu\\Desktop\\Morphology Projects\\turkce.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
-    */
 
-    public static ArrayList<String> getPossibleSplits(String word, String stem, int suffixNo) throws FileNotFoundException {
+    public static List<String> getPossibleSplitsByStem(String word, String stem, int suffixNo) throws FileNotFoundException {
 
-        ArrayList<String> pSegmentations = new ArrayList<String>();
+        List<String> pSegmentations = new ArrayList<String>();
         getPossibleAffixSequence(stem, word.substring(stem.length()), pSegmentations, suffixNo, 1);
 
-        ArrayList<String> fSegmentations = new ArrayList<String>();
+        List<String> fSegmentations = new ArrayList<String>();
         for (String s : pSegmentations) {
             StringTokenizer st = new StringTokenizer(s, " ");
             String curr = st.nextToken() + st.nextToken();
@@ -70,6 +68,53 @@ public class Segmenter {
         }
     }
 
+    public static List<String> getAllPossibleSplits(String word, int morphemeNo) {
+
+        List<String> tmpResults = new ArrayList<>();
+
+        String tWord = word;
+        int nM = morphemeNo - 1;
+
+        List<int[]> all = getAllLists(tWord.length(), morphemeNo - 1);
+        for (int[] i : all) {
+            String nWord = "";
+            int b = 0;
+            for (int j = 0; j < nM; j++) {
+                nWord = nWord + tWord.substring(b, i[j]) + " ";
+                b = i[j];
+            }
+            tmpResults.add(nWord + " " + tWord.substring(i[nM - 1]));
+        }
+        List<String> results;
+        double th = threshold;
+        do {
+            th = th - 0.05;
+            results = getSplitByThreshold(tmpResults, th);
+        } while ((results.size() == 0) && (th != 1));
+
+        return results;
+    }
+
+    public static List<String> getSplitByThreshold(List<String> all, double threshold) {
+        List<String> results = new ArrayList<>();
+
+        for (String s : all) {
+            StringTokenizer st = new StringTokenizer(s, " ");
+            String curr = st.nextToken();
+            String next = "";
+            boolean isOK = true;
+            while (st.hasMoreTokens()) {
+                next = curr + st.nextToken();
+                if (!(isOK = (vectors.hasWord(curr) && vectors.hasWord(next) && (vectors.similarity(curr, next) > threshold && vectors.similarity(curr, next) < 1)))) {
+                    break;
+                }
+                curr = next;
+            }
+            if (isOK) results.add(s);
+        }
+        return results;
+    }
+
     public static List<int[]> getAllLists(int sWord, int nMorpheme) {
 
         int[] input = new int[sWord - 1];    // input array
@@ -105,7 +150,7 @@ public class Segmenter {
             }
         }
 
-    return subsets;
+        return subsets;
     }
 
     // generate actual subset by index sequence
@@ -163,20 +208,14 @@ public class Segmenter {
         }
         */
 
-        String tWord = "evler";
-        int nM = 3-1;
+        String[] test = {"arabaları", "evlerim", "gelmişti", "yazacakmış", "defterinizin"};
 
-        List<int[]> all = getAllLists(tWord.length(), nM);
-        for (int[] i : all) {
-            String nWord = "";
-            int b = 0;
-            for (int j=0;j<nM;j++) {
-                nWord = nWord + tWord.substring(b,i[j]) + " ";
-                b = i[j];
+        for (String word : test) {
+            System.out.println("==========================================================");
+            for (String s : getAllPossibleSplits(word, 3)) {
+                System.out.println(s);
             }
-            System.out.println(nWord + " " + tWord.substring(i[nM-1]));
         }
-
     }
 
 }
