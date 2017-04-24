@@ -1,0 +1,5 @@
+çantada çanta n Loc
+çantanýn çanta n Gen
+çantaya çanta n Dat
+çantalar çanta n Npl
+çantalara çanta n Npl,Dat

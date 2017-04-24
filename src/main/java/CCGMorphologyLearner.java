@@ -14,25 +14,24 @@ import java.util.StringTokenizer;
 public class CCGMorphologyLearner {
 
     public static WordVectors vectors;
-    public static double threshold = 0.4;
-    public static String[] nLogicalCategories = {"NPL", "LOC", "DAT", "ACC", "GEN", "P1SG", "P2SG", "P3SG", "P1PL", "P2PL", "P3PL"};
-    public static String[] vLogicalCategories = {"PAST", "PROG", "FUT", "AOR", "NARR", "A1SG", "A2SG", "A1PL", "A2PL", "A3PL"};
-    public static String[] LogicalCategories = {"NPL", "LOC", "DAT", "ACC", "GEN", "P1SG", "P2SG", "P3SG", "P1PL", "P2PL",
-        "P3PL", "PAST", "PROG", "FUT", "AOR", "NARR", "A1SG", "A2SG", "A1PL", "A2PL", "A3PL"};
+    public static double threshold = 0.25;
+
+    /* ================================ Vector Loading =========================================== */
 
     static {
         try {
-            vectors = WordVectorSerializer.loadTxtVectors(new File("/home/master/Desktop/morph-pro/vectors/turkce.txt"));
+            vectors = WordVectorSerializer.loadTxtVectors(new File("C:\\Users\\ahmetu\\Desktop\\Morphology Projects\\turkce.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 
-    public static String getLF(String wordTags) {
+    /* ================================ Logical Form Operation =========================================== */
+
+    public static String getLF(String lemma, String wordTags) {
         String lf = "";
 
-        String cWordTag = wordTags.toUpperCase();
-        String[] tags = cWordTag.split("\\+");
+        String[] tags = (lemma + "," + wordTags).split(",");
 
         int n = tags.length;
         for (int i = 0; i < n - 1; i++) {
@@ -48,10 +47,12 @@ public class CCGMorphologyLearner {
         return lf;
     }
 
-    public static ArrayList<String> getPossibleSplits(String word, String stem, int suffixNo) throws FileNotFoundException {
+    /* ================================ Segmentation =========================================== */
+
+    public static ArrayList<String> getPossibleSplits(String word, String lemma, int suffixNo) throws FileNotFoundException {
 
         ArrayList<String> pSegmentations = new ArrayList<String>();
-        getPossibleAffixSequence(stem, word.substring(stem.length()), pSegmentations, suffixNo, 1);
+        getPossibleAffixSequence(lemma, word.substring(lemma.length()), pSegmentations, suffixNo, 1);
 
         ArrayList<String> fSegmentations = new ArrayList<String>();
         for (String s : pSegmentations) {
@@ -81,8 +82,6 @@ public class CCGMorphologyLearner {
             segmentations.add(head + " " + tail);
         } else if (tail.length() == 0) {
             segmentations.add(head);
-//        } else if (tail.length() == 1) {
-//            segmentations.add(head + " " + tail);
         } else {
             for (int i = 1; i < tail.length() + 1; i++) {
                 String morpheme = tail.substring(0, i);
@@ -96,34 +95,33 @@ public class CCGMorphologyLearner {
         }
     }
 
-    public static String getLexcialEntry(String suffix, String[] semantics) {
+    /* ================================ Lexicon Operation with Templates =========================================== */
+
+    public static String getLexcialEntry(String suffix, String[] semantics, String pos) {
 
         String tmp = "% " + suffix + "\n";
 
-        for (String meaning : semantics) {
-
-            tmp = tmp + suffix + " s := np/np: \\x.!" + meaning + " x;" + "\n"
-                    + suffix + " s := np\\np: \\x.!" + meaning + " x;" + "\n"
-                    + suffix + " s := vp/vp: \\x.!" + meaning + " x;" + "\n"
-                    + suffix + " s := vp\\vp: \\x.!" + meaning + " x;" + "\n\n";
-
-//            tmp = tmp + suffix + " s := np/np: \\x.!" + meaning + " x;" + "\n" +
-//                    suffix + " s := np\\np: \\x.!" + meaning + " x;" + "\n\n";
+        if (pos.equalsIgnoreCase("n")) {
+            for (String meaning : semantics) {
+                tmp = tmp + suffix + " s := np/np: \\x.!" + meaning + " x;" + "\n"
+                        + suffix + " s := np\\np: \\x.!" + meaning + " x;" + "\n\n";
+            }
+        } else if (pos.equalsIgnoreCase("v")) {
+            for (String meaning : semantics) {
+                tmp = tmp + suffix + " s := vp/vp: \\x.!" + meaning + " x;" + "\n"
+                        + suffix + " s := vp\\vp: \\x.!" + meaning + " x;" + "\n\n";
+            }
         }
 
         return tmp;
     }
 
-    public static void main(String[] args) throws IOException {
+    /* ================================ Lexicon and Training Set Generation =========================================== */
 
-        String nFile = "/home/master/Desktop/ccg_project/final/nouns_f";
-        String vFile = "/home/master/Desktop/ccg_project/final/verbs_f";
-
-        String tFile = "/home/master/Desktop/ccg_project/final/f6/test";
-
-        BufferedReader reader = new BufferedReader(new FileReader(tFile));
-        FileWriter ccg = new FileWriter(tFile + ".ccg");
-        FileWriter sup = new FileWriter(tFile + ".sup");
+    public static void generateCCGandSUP(String inFile) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(inFile));
+        FileWriter ccg = new FileWriter(inFile + ".ccg");
+        FileWriter sup = new FileWriter(inFile + ".sup");
 
         HashSet<String> suffixes = new HashSet<>();
         String supString = "(\n";
@@ -133,32 +131,37 @@ public class CCGMorphologyLearner {
 
             StringTokenizer st = new StringTokenizer(line, " ");
             String word = st.nextToken();
-            String stem = st.nextToken();
+            String lemma = st.nextToken();
+            String pos = st.nextToken();
             String mor = st.nextToken();
 
-            StringTokenizer tokenizer = new StringTokenizer(mor, "+");
-            int suffixNo = tokenizer.countTokens();
+            StringTokenizer tokenizer = new StringTokenizer(mor, ",");
+            String[] tags = mor.split(",");
+            int suffixNo = tags.length;
 
-            for (String s : getPossibleSplits(word, stem, suffixNo - 1)) {
+            for (String s : getPossibleSplits(word, lemma, suffixNo)) {
                 StringTokenizer tokens = new StringTokenizer(s, " ");
                 tokens.nextToken();
                 while (tokens.hasMoreTokens()) {
-                    suffixes.add(tokens.nextToken());
+                    String suff = tokens.nextToken();
+                    ccg.write(getLexcialEntry(suff, tags, pos));
                 }
 
-                supString = supString + "((" + s + ") " + getLF(mor) + ")\n";
+                supString = supString + "((" + s + ") " + getLF(lemma, mor) + ")\n";
             }
         }
 
         supString = supString + ")";
-
         sup.write(supString);
-        sup.close();
 
-        for (String l : suffixes) {
-            ccg.write(getLexcialEntry(l, LogicalCategories));
-        }
+        sup.close();
         ccg.close();
     }
 
+
+    /* ================================ Main =========================================== */
+
+    public static void main(String[] args) throws IOException {
+        generateCCGandSUP("C:\\Users\\ahmetu\\Desktop\\Morphology Projects\\ccg-data\\nouns_f");
+    }
 }
