@@ -18,12 +18,8 @@ public class CCGMorphologyLearner {
 
     /* ================================ Vector Loading =========================================== */
 
-    static {
-        try {
-            vectors = WordVectorSerializer.loadTxtVectors(new File("C:\\Users\\ahmetu\\Desktop\\Morphology Projects\\turkce.txt"));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+    public static void loadVectors(String vectorFile) throws FileNotFoundException {
+        vectors = WordVectorSerializer.loadTxtVectors(new File(vectorFile));
     }
 
     /* ================================ Logical Form Operation =========================================== */
@@ -130,10 +126,11 @@ public class CCGMorphologyLearner {
         while ((line = reader.readLine()) != null) {
 
             StringTokenizer st = new StringTokenizer(line, " ");
-            String word = st.nextToken();
+
             String lemma = st.nextToken();
             String pos = st.nextToken();
             String mor = st.nextToken();
+            String word = st.nextToken();
 
             StringTokenizer tokenizer = new StringTokenizer(mor, ",");
             String[] tags = mor.split(",");
@@ -158,10 +155,10 @@ public class CCGMorphologyLearner {
         ccg.close();
     }
 
-
     /* ================================ Main =========================================== */
 
     public static void main(String[] args) throws IOException {
-        generateCCGandSUP("C:\\Users\\ahmetu\\Desktop\\Morphology Projects\\ccg-data\\nouns_f");
+        loadVectors(args[1]);
+        generateCCGandSUP(args[2]);
     }
 }
