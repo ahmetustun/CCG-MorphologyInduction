@@ -3,10 +3,7 @@ import org.deeplearning4j.models.embeddings.loader.WordVectorSerializer;
 import org.deeplearning4j.models.embeddings.wordvectors.WordVectors;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 /**
  * Created by ahmet on 21/01/2017.
@@ -14,7 +11,11 @@ import java.util.StringTokenizer;
 public class CCGMorphologyLearner {
 
     public static WordVectors vectors;
-    public static double threshold = 0.25;
+    public static double threshold = 0.3;
+
+    public static Set<String> lemmaANDpos = new TreeSet<>();
+    public static Set<String> morphemeEntry = new TreeSet<>();
+    public static Set<String> supEntry = new HashSet<>();
 
     /* ================================ Vector Loading =========================================== */
 
@@ -93,33 +94,37 @@ public class CCGMorphologyLearner {
 
     /* ================================ Lexicon Operation with Templates =========================================== */
 
-    public static String getLexcialEntry(String suffix, String[] semantics, String pos) {
-
-        String tmp = "% " + suffix + "\n";
+    public static void getLexicalEntryForAffixes(String suffix, String[] semantics, String pos) {
 
         if (pos.equalsIgnoreCase("n")) {
             for (String meaning : semantics) {
-                tmp = tmp + suffix + " s := np/np: \\x.!" + meaning + " x;" + "\n"
-                        + suffix + " s := np\\np: \\x.!" + meaning + " x;" + "\n\n";
+                morphemeEntry.add(suffix + " s := np/np: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := np\\np: \\x.!" + meaning + " x;\n");
             }
         } else if (pos.equalsIgnoreCase("v")) {
             for (String meaning : semantics) {
-                tmp = tmp + suffix + " s := vp/vp: \\x.!" + meaning + " x;" + "\n"
-                        + suffix + " s := vp\\vp: \\x.!" + meaning + " x;" + "\n\n";
+                morphemeEntry.add(suffix + " s := vp/vp: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := vp\\vp: \\x.!" + meaning + " x;\n");
             }
         }
+    }
+
+    public static int lemmaNo = 0;
+
+    public static String getLexicalEntryForLemma(String lemma, String pos) {
+        String lf = pos + lemmaNo;
+        lemmaNo++;
+
+        String tmp = lemma + " " + pos + " := " + pos + "p: !" + lf + ";\n";
 
         return tmp;
     }
 
     /* ================================ Lexicon and Training Set Generation =========================================== */
 
-    public static void generateCCGandSUP(String inFile) throws IOException {
+    public static void morphoGenLex (String inFile) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(inFile));
-        FileWriter ccg = new FileWriter(inFile + ".ccg");
-        FileWriter sup = new FileWriter(inFile + ".sup");
 
-        HashSet<String> suffixes = new HashSet<>();
         String supString = "(\n";
 
         String line;
@@ -132,6 +137,8 @@ public class CCGMorphologyLearner {
             String mor = st.nextToken();
             String word = st.nextToken();
 
+            lemmaANDpos.add(lemma+"#"+pos);
+
             StringTokenizer tokenizer = new StringTokenizer(mor, ",");
             String[] tags = mor.split(",");
             int suffixNo = tags.length;
@@ -141,7 +148,8 @@ public class CCGMorphologyLearner {
                 tokens.nextToken();
                 while (tokens.hasMoreTokens()) {
                     String suff = tokens.nextToken();
-                    ccg.write(getLexcialEntry(suff, tags, pos));
+
+                    getLexicalEntryForAffixes(suff, tags, pos);
                 }
 
                 supString = supString + "((" + s + ") " + getLF(lemma, mor) + ")\n";
@@ -149,16 +157,39 @@ public class CCGMorphologyLearner {
         }
 
         supString = supString + ")";
-        sup.write(supString);
+
+        supEntry.add(supString);
+
+    }
+
+    public static void writeToFiles(String inFile) throws IOException {
+
+        FileWriter ccg = new FileWriter(inFile + ".ccg");
+        FileWriter sup = new FileWriter(inFile + ".sup");
+
+        for (String lemma : lemmaANDpos) {
+            String[] lAe = lemma.split("#");
+            ccg.write(getLexicalEntryForLemma(lAe[0], lAe[1]));
+        }
+
+        for (String morpheme : morphemeEntry) {
+            ccg.write(morpheme);
+        }
+
+        ccg.close();
+
+        for (String training : supEntry) {
+            sup.write(training);
+        }
 
         sup.close();
-        ccg.close();
     }
 
     /* ================================ Main =========================================== */
 
     public static void main(String[] args) throws IOException {
-        loadVectors(args[1]);
-        generateCCGandSUP(args[2]);
+        loadVectors(args[0]);
+        morphoGenLex(args[1]);
+        writeToFiles(args[1]);
     }
 }

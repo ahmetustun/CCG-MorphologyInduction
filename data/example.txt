@@ -1,5 +1,5 @@
-acımak V 3P acırlar
-acımak V PST,1P acıdık
+acı V 3P,PFV acırlar
+acı V PST,1P acıdık
 acı N ESS,PLU acılarda
 acı N PSS1P,ACC acımızı
 acı N PSS1P,ESS,PLU acılarımızda
