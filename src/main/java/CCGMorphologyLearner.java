@@ -46,21 +46,34 @@ public class CCGMorphologyLearner {
 
     /* ================================ Segmentation =========================================== */
 
-    public static ArrayList<String> getPossibleSplits(String word, String lemma, int suffixNo) throws FileNotFoundException {
+    public static ArrayList<String> getPossibleSplits(String word, String lemma, int suffixNo, String pos) throws FileNotFoundException {
+
+        String lemma_t = word.substring(0, lemma.length());
 
         ArrayList<String> pSegmentations = new ArrayList<String>();
-        getPossibleAffixSequence(lemma, word.substring(lemma.length()), pSegmentations, suffixNo, 1);
+        getPossibleAffixSequence(lemma_t, word.substring(lemma.length()), pSegmentations, suffixNo, 1);
 
         ArrayList<String> fSegmentations = new ArrayList<String>();
         for (String s : pSegmentations) {
             StringTokenizer st = new StringTokenizer(s, " ");
-            String curr = st.nextToken() + st.nextToken();
+
+            String curr = "";
+            String root = "";
+            if (pos.equalsIgnoreCase("V")) {
+                curr = st.nextToken() + st.nextToken();
+                root = curr;
+            } else {
+                curr = st.nextToken();
+                root = lemma;
+            }
+
             String next = "";
             boolean ok = true;
             while (st.hasMoreTokens()) {
                 next = curr + st.nextToken();
-                if (vectors.hasWord(curr) && vectors.hasWord(next) && (vectors.similarity(curr, next) > threshold && vectors.similarity(curr, next) < 1)) {
+                if (vectors.hasWord(root) && vectors.hasWord(next) && (vectors.similarity(root, next) > threshold && vectors.similarity(root, next) < 1)) {
                     curr = next;
+                    root = next;
                 } else {
                     ok = false;
                     break;
@@ -71,7 +84,44 @@ public class CCGMorphologyLearner {
             }
         }
 
-        return fSegmentations;
+        ArrayList<String> sSegmentations = new ArrayList<String>();
+        if (fSegmentations.isEmpty()) {
+            for (String s : pSegmentations) {
+                StringTokenizer st = new StringTokenizer(s, " ");
+
+                String curr;
+                String root;
+                /*
+                if (pos.equalsIgnoreCase("V")) {
+                    curr = st.nextToken() + st.nextToken();
+                    root = curr;
+                } else {
+*/
+                curr = st.nextToken();
+                root = lemma;
+//                }
+
+                String next = "";
+                boolean ok = true;
+                while (st.hasMoreTokens()) {
+                    next = curr + st.nextToken();
+                    if (vectors.hasWord(root) && vectors.hasWord(next)) {
+                        curr = next;
+                        root = next;
+                    } else {
+                        ok = false;
+                        break;
+                    }
+                }
+                if (ok) {
+                    sSegmentations.add(s);
+                }
+            }
+        } else return fSegmentations;
+
+        if (!sSegmentations.isEmpty()) return sSegmentations;
+
+        return pSegmentations;
     }
 
     private static void getPossibleAffixSequence(String head, String tail, List<String> segmentations, int suffixNo, int level) {
@@ -122,7 +172,7 @@ public class CCGMorphologyLearner {
 
     /* ================================ Lexicon and Training Set Generation =========================================== */
 
-    public static void morphoGenLex (String inFile) throws IOException {
+    public static void morphoGenLex(String inFile) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(inFile));
 
         String supString = "(\n";
@@ -137,13 +187,13 @@ public class CCGMorphologyLearner {
             String mor = st.nextToken();
             String word = st.nextToken();
 
-            lemmaANDpos.add(lemma+"#"+pos);
+            lemmaANDpos.add(lemma + "#" + pos.toLowerCase());
 
             StringTokenizer tokenizer = new StringTokenizer(mor, ",");
             String[] tags = mor.split(",");
             int suffixNo = tags.length;
 
-            for (String s : getPossibleSplits(word, lemma, suffixNo)) {
+            for (String s : getPossibleSplits(word, lemma, suffixNo, pos)) {
                 StringTokenizer tokens = new StringTokenizer(s, " ");
                 tokens.nextToken();
                 while (tokens.hasMoreTokens()) {
@@ -167,11 +217,13 @@ public class CCGMorphologyLearner {
         FileWriter ccg = new FileWriter(inFile + ".ccg");
         FileWriter sup = new FileWriter(inFile + ".sup");
 
+        ccg.write("% Lemmas\n");
         for (String lemma : lemmaANDpos) {
             String[] lAe = lemma.split("#");
             ccg.write(getLexicalEntryForLemma(lAe[0], lAe[1]));
         }
 
+        ccg.write("\n% Affixes\n");
         for (String morpheme : morphemeEntry) {
             ccg.write(morpheme);
         }
@@ -189,7 +241,12 @@ public class CCGMorphologyLearner {
 
     public static void main(String[] args) throws IOException {
         loadVectors(args[0]);
+        System.out.println("========== Vector File is loaded ==========");
+
         morphoGenLex(args[1]);
+        System.out.println("========== Morphological-GenLex operation is finished ==========");
+
         writeToFiles(args[1]);
+        System.out.println("========== ccg and sup file is created ==========");
     }
 }
