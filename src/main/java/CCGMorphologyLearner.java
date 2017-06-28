@@ -221,14 +221,17 @@ public class CCGMorphologyLearner {
 
             for (String s : getPossibleSplits(word, lemma, suffixNo, pos)) {
                 StringTokenizer tokens = new StringTokenizer(s, " ");
-                tokens.nextToken();
+
+                String lemma_in = tokens.nextToken();
+                lemmaANDpos.add(lemma_in + "#" + pos.toLowerCase());
+
                 while (tokens.hasMoreTokens()) {
                     String suff = tokens.nextToken();
 
                     getLexicalEntryForAffixes(suff, tags, pos);
                 }
 
-                supString = supString + "((" + s + ") " + getLF(lemma, mor) + ")\n";
+                supString = supString + "((" + s + ") " + getLF(lemma_in, mor) + ")\n";
             }
         }
 
@@ -274,10 +277,10 @@ public class CCGMorphologyLearner {
         System.out.println("========== Training data is cleaned ==========");
         */
 
-        morphoGenLex(args[1]);
+        morphoGenLex("data/exceptions.txt");
         System.out.println("========== Morphological-GenLex operation is finished ==========");
 
-        writeToFiles(args[1]);
+        writeToFiles("data/exceptions.txt");
         System.out.println("========== ccg and sup file is created ==========");
 
     }
