@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Created by ahmet on 02/04/2017.
  */
-public class Segmenter {
+public class FullUnsupervisedSegmentation {
 
     public static WordVectors vectors;
     public static double threshold = 0.45;

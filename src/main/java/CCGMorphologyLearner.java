@@ -23,6 +23,32 @@ public class CCGMorphologyLearner {
         vectors = WordVectorSerializer.loadTxtVectors(new File(vectorFile));
     }
 
+    /* ================================ Pre-Processes on Training Data =========================================== */
+
+    public static void cleanData(String inFile) throws IOException {
+
+        BufferedReader reader = new BufferedReader(new FileReader(inFile));
+        FileWriter writer = new FileWriter(inFile + ".clean");
+
+        String line;
+        while ((line = reader.readLine()) != null) {
+
+            StringTokenizer st = new StringTokenizer(line, " ");
+
+            String lemma = st.nextToken();
+            String pos = st.nextToken();
+            String mor = st.nextToken();
+            String word = st.nextToken();
+
+            if (vectors.hasWord(word)) {
+                writer.write(line+"\n");
+            }
+
+        }
+
+        writer.close();
+    }
+
     /* ================================ Logical Form Operation =========================================== */
 
     public static String getLF(String lemma, String wordTags) {
@@ -241,12 +267,18 @@ public class CCGMorphologyLearner {
 
     public static void main(String[] args) throws IOException {
         loadVectors(args[0]);
-        System.out.println("========== Vector File is loaded ==========");
+        System.out.println("========== Vector file is loaded ==========");
+
+        /*
+        cleanData(args[1]);
+        System.out.println("========== Training data is cleaned ==========");
+        */
 
         morphoGenLex(args[1]);
         System.out.println("========== Morphological-GenLex operation is finished ==========");
 
         writeToFiles(args[1]);
         System.out.println("========== ccg and sup file is created ==========");
+
     }
 }
