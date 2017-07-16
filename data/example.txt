@@ -1,3 +1,5 @@
+ziyaret N PSS1P,GEN,PLU ziyaretlerinin
+yoldaş N PSS1P,GEN,PLU yoldaşlarımızın
 acı V 3P,PFV acırlar
 acı V PST,1P acıdık
 acı N ESS,PLU acılarda

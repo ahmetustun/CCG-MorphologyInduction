@@ -13,6 +13,11 @@ public class CCGMorphologyLearner {
     public static WordVectors vectors;
     public static double threshold = 0.3;
 
+    public static boolean setLimit = true;
+    public static int limit = 2;
+
+    public static int corpLimit = 2;
+
     public static Set<String> lemmaANDpos = new TreeSet<>();
     public static Set<String> morphemeEntry = new TreeSet<>();
     public static Set<String> supEntry = new HashSet<>();
@@ -41,9 +46,51 @@ public class CCGMorphologyLearner {
             String word = st.nextToken();
 
             if (vectors.hasWord(word)) {
-                writer.write(line+"\n");
+                writer.write(line + "\n");
             }
 
+        }
+
+        writer.close();
+    }
+
+    public static void cropData(String inFile) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(inFile));
+        FileWriter writer = new FileWriter(inFile + ".crop");
+
+        HashMap<String, ArrayList<String>> root2words = new HashMap<>();
+
+        String line;
+        while ((line = reader.readLine()) != null) {
+
+            StringTokenizer st = new StringTokenizer(line, " ");
+
+            String lemma = st.nextToken();
+            String pos = st.nextToken();
+            String mor = st.nextToken();
+            String word = st.nextToken();
+
+            String root = lemma+"#"+pos;
+
+            if (root2words.containsKey(root)) {
+                ArrayList<String> words = root2words.get(root);
+                words.add(line);
+                root2words.put(root, words);
+            } else {
+                ArrayList<String> words = new ArrayList<>();
+                words.add(line);
+                root2words.put(root, words);
+            }
+
+        }
+
+        for (String root : root2words.keySet()) {
+            ArrayList<String> words = root2words.get(root);
+            if (words.size() > corpLimit) {
+                for (int i=0; i<corpLimit; i++) {
+                    writer.write(words.get(i) + "\n");
+                }
+            }
         }
 
         writer.close();
@@ -80,6 +127,7 @@ public class CCGMorphologyLearner {
         getPossibleAffixSequence(lemma_t, word.substring(lemma.length()), pSegmentations, suffixNo, 1);
 
         ArrayList<String> fSegmentations = new ArrayList<String>();
+        TreeMap<Double, String> score2seg = new TreeMap<Double, String>();
         for (String s : pSegmentations) {
             StringTokenizer st = new StringTokenizer(s, " ");
 
@@ -95,21 +143,25 @@ public class CCGMorphologyLearner {
 
             String next = "";
             boolean ok = true;
+            double score = 0d;
             while (st.hasMoreTokens()) {
                 next = curr + st.nextToken();
-                if (vectors.hasWord(root) && vectors.hasWord(next) && (vectors.similarity(root, next) > threshold && vectors.similarity(root, next) < 1)) {
+                double distance = vectors.similarity(root, next);
+                if (vectors.hasWord(root) && vectors.hasWord(next) && (distance > threshold && vectors.similarity(root, next) < 1)) {
                     curr = next;
                     root = next;
+                    score = score + distance;
                 } else {
                     ok = false;
                     break;
                 }
             }
             if (ok) {
-                fSegmentations.add(s);
+                score2seg.put(score, s);
+//                fSegmentations.add(s);
             }
         }
-
+/*
         ArrayList<String> sSegmentations = new ArrayList<String>();
         if (fSegmentations.isEmpty()) {
             for (String s : pSegmentations) {
@@ -117,12 +169,12 @@ public class CCGMorphologyLearner {
 
                 String curr;
                 String root;
-                /*
-                if (pos.equalsIgnoreCase("V")) {
-                    curr = st.nextToken() + st.nextToken();
-                    root = curr;
-                } else {
-*/
+
+//                if (pos.equalsIgnoreCase("V")) {
+//                    curr = st.nextToken() + st.nextToken();
+//                    root = curr;
+//                } else {
+
                 curr = st.nextToken();
                 root = lemma;
 //                }
@@ -145,9 +197,21 @@ public class CCGMorphologyLearner {
             }
         } else return fSegmentations;
 
-        if (!sSegmentations.isEmpty()) return sSegmentations;
+        if (sSegmentations.isEmpty()) return pSegmentations;
+*/
+        if (setLimit && score2seg.size() > limit) {
+            double key = score2seg.lastKey();
+            for (int i = 0; i < limit; i++) {
+                fSegmentations.add(score2seg.get(key));
+                key = score2seg.lowerKey(key);
+            }
+        } else {
+            for (double key : score2seg.keySet()) {
+                fSegmentations.add(score2seg.get(key));
+            }
+        }
 
-        return pSegmentations;
+        return fSegmentations;
     }
 
     private static void getPossibleAffixSequence(String head, String tail, List<String> segmentations, int suffixNo, int level) {
@@ -269,18 +333,24 @@ public class CCGMorphologyLearner {
     /* ================================ Main =========================================== */
 
     public static void main(String[] args) throws IOException {
-        loadVectors(args[0]);
+        loadVectors("/Users/ahmet/Desktop/MorphologySoftware/word2vec/turkce");
         System.out.println("========== Vector file is loaded ==========");
 
         /*
         cleanData(args[1]);
         System.out.println("========== Training data is cleaned ==========");
+
+
+        cropData(data + ".clean");
+        System.out.println("========== Training data is cropped ==========");
         */
 
-        morphoGenLex("data/exceptions.txt");
+        String data = "/Users/ahmet/Desktop/thesis-work/data/data-crop-limited-segmentations/sigmorphon-modified-train";
+
+        morphoGenLex(data + ".clean.crop");
         System.out.println("========== Morphological-GenLex operation is finished ==========");
 
-        writeToFiles("data/exceptions.txt");
+        writeToFiles(data);
         System.out.println("========== ccg and sup file is created ==========");
 
     }
