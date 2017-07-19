@@ -252,8 +252,10 @@ public class CCGMorphologyLearner {
     public static int lemmaNo = 0;
 
     public static String getLexicalEntryForLemma(String lemma, String pos) {
-        String lf = pos + lemmaNo;
-        lemmaNo++;
+        //String lf = pos + lemmaNo;
+        //lemmaNo++;
+
+        String lf = lemma;
 
         String tmp = lemma + " " + pos + " := " + pos + "p: !" + lf + ";\n";
 
@@ -295,7 +297,10 @@ public class CCGMorphologyLearner {
                     getLexicalEntryForAffixes(suff, tags, pos);
                 }
 
-                supString = supString + "((" + s + ") " + getLF(lemma_in, mor) + ")\n";
+                supString = supString + "((" + s + ") " +
+                        getLF(lemma_in.toUpperCase(new Locale("tr","TR")).
+                                replace("I","ı").
+                                replace("İ","I"), mor) + ")\n";
             }
         }
 
@@ -345,9 +350,9 @@ public class CCGMorphologyLearner {
         System.out.println("========== Training data is cropped ==========");
         */
 
-        String data = "/Users/ahmet/Desktop/thesis-work/data/data-crop-limited-segmentations/sigmorphon-modified-train";
+        String data = "/Users/ahmet/Desktop/thesis-work/data/data-clean-limited-segmentations/sigmorphon-modified-train";
 
-        morphoGenLex(data + ".clean.crop");
+        morphoGenLex(data + ".clean");
         System.out.println("========== Morphological-GenLex operation is finished ==========");
 
         writeToFiles(data);
