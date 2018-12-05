@@ -1,8 +1,5 @@
-ziyaret N PSS1P,GEN,PLU ziyaretlerinin
-yoldaş N PSS1P,GEN,PLU yoldaşlarımızın
-acı V 3P,PFV acırlar
-acı V PST,1P acıdık
-acı N ESS,PLU acılarda
-acı N PSS1P,ACC acımızı
-acı N PSS1P,ESS,PLU acılarımızda
-acı N PSS1P,GEN,PLU acılarımızın
+expletives N PL
+explorations N PL
+extensions N PL
+dynamics' N PL,GEN
+recommendations' N PL,GEN

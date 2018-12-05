@@ -9,21 +9,22 @@ import java.util.*;
  */
 public class FullUnsupervisedSegmentation {
 
-    public static WordVectors vectors;
-    public static double threshold = 0.45;
+    private static String lang = "fin";
 
+    /*
     static {
         try {
-            vectors = WordVectorSerializer.loadTxtVectors(new File("C:\\Users\\ahmetu\\Desktop\\Morphology Projects\\turkce.txt"));
-        } catch (FileNotFoundException e) {
+            vectors = WordVectorSerializer.loadGoogleModel(new File("/Users/ahmetustun/Desktop/nlp-tools/google_vec.bin"), true);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+
     public static List<String> getPossibleSplitsByStem(String word, String stem, int suffixNo) throws FileNotFoundException {
 
         List<String> pSegmentations = new ArrayList<String>();
-        getPossibleAffixSequence(stem, word.substring(stem.length()), pSegmentations, suffixNo, 1);
+        Utils.getPossibleAffixSequence(stem, word.substring(stem.length()), pSegmentations, suffixNo, 1);
 
         List<String> fSegmentations = new ArrayList<String>();
         for (String s : pSegmentations) {
@@ -48,119 +49,92 @@ public class FullUnsupervisedSegmentation {
         return fSegmentations;
     }
 
-    private static void getPossibleAffixSequence(String head, String tail, List<String> segmentations, int suffixNo, int level) {
-        if (suffixNo == level) {
-            segmentations.add(head + " " + tail);
-        } else if (tail.length() == 0) {
-            segmentations.add(head);
-//        } else if (tail.length() == 1) {
-//            segmentations.add(head + " " + tail);
-        } else {
-            for (int i = 1; i < tail.length() + 1; i++) {
-                String morpheme = tail.substring(0, i);
+    */
 
-                if (morpheme.length() != tail.length()) {
-                    String tailMorph = tail.substring(i);
-                    String headMorph = head + " " + morpheme;
-                    getPossibleAffixSequence(headMorph, tailMorph, segmentations, suffixNo, level + 1);
-                }
-            }
-        }
-    }
-
-    public static List<String> getAllPossibleSplits(String word, int morphemeNo) {
+    public static List<String> getAllPossibleSplits(String word, int morphemeNo, double threshold, WordVectors vectors, String pos) {
 
         List<String> tmpResults = new ArrayList<>();
 
         String tWord = word;
-        int nM = morphemeNo - 1;
 
-        List<int[]> all = getAllLists(tWord.length(), morphemeNo - 1);
-        for (int[] i : all) {
-            String nWord = "";
-            int b = 0;
-            for (int j = 0; j < nM; j++) {
-                nWord = nWord + tWord.substring(b, i[j]) + " ";
-                b = i[j];
-            }
-            tmpResults.add(nWord + " " + tWord.substring(i[nM - 1]));
+        String[] sWord = new String[2];
+
+        boolean split = false;
+        if (word.contains("'")) {
+            sWord = word.split("'");
+            tWord = sWord[0];
+            morphemeNo = morphemeNo - 1;
+            split = true;
         }
-        List<String> results;
+
+        if (morphemeNo != 1) {
+            tmpResults = Utils.getAllSplits(tWord, morphemeNo);
+        } else {
+            tmpResults.add(tWord);
+        }
+        List<String> tResults;
+        List<String> results = new ArrayList<>();
         double th = threshold;
         do {
             th = th - 0.05;
-            results = getSplitByThreshold(tmpResults, th);
-        } while ((results.size() == 0) && (th != 1));
+            tResults = getSplitByThreshold(tmpResults, th, vectors, pos);
+        } while ((tResults.size() == 0) && (th >= 0.19d));
+
+        if (split && sWord.length > 1) {
+            for (String res : tResults) {
+                results.add(res + " '" + sWord[1]);
+            }
+        } else if (split) {
+            for (String res : tResults) {
+                results.add(res + " '");
+            }
+        } else return tResults;
 
         return results;
     }
 
-    public static List<String> getSplitByThreshold(List<String> all, double threshold) {
+    public static List<String> getSplitByThreshold(List<String> all, double threshold, WordVectors vectors, String pos) {
+
         List<String> results = new ArrayList<>();
 
         for (String s : all) {
             StringTokenizer st = new StringTokenizer(s, " ");
             String curr = st.nextToken();
+
             String next = "";
             boolean isOK = true;
+
+            boolean[] ok = {true, true, true};
+
+
+            if (pos.equalsIgnoreCase("v") && lang.equalsIgnoreCase("tr")) {
+                String[] mastar = {"mek", "mak", ""};
+                next = curr + st.nextToken();
+                for (int i = 0; i < mastar.length; i++) {
+                    ok[i] = (vectors.hasWord(curr + mastar[i]) &&
+                            vectors.hasWord(next) &&
+                            (vectors.similarity(curr + mastar[i], next) > threshold &&
+                                    vectors.similarity(curr + mastar[i], next) < 1));
+                }
+                curr = next;
+            }
+
             while (st.hasMoreTokens()) {
                 next = curr + st.nextToken();
-                if (!(isOK = (vectors.hasWord(curr) && vectors.hasWord(next) && (vectors.similarity(curr, next) > threshold && vectors.similarity(curr, next) < 1)))) {
+                if (!(isOK = (vectors.hasWord(curr) &&
+                        vectors.hasWord(next) &&
+                        (vectors.similarity(curr, next) > threshold &&
+                                vectors.similarity(curr, next) < 1)))) {
                     break;
                 }
                 curr = next;
             }
-            if (isOK) results.add(s);
+            if (isOK && (ok[0] || ok[1] || ok[2])) results.add(s);
         }
         return results;
     }
 
-    public static List<int[]> getAllLists(int sWord, int nMorpheme) {
-
-        int[] input = new int[sWord - 1];    // input array
-
-        for (int i = 1; i < sWord; i++) {
-            input[i - 1] = i;
-        }
-
-        int k = nMorpheme;                             // sequence length
-
-        List<int[]> subsets = new ArrayList<>();
-
-        int[] s = new int[k];                  // here we'll keep indices
-        // pointing to elements in input array
-
-        if (k <= input.length) {
-            // first index sequence: 0, 1, 2, ...
-            for (int i = 0; (s[i] = i) < k - 1; i++) ;
-            subsets.add(getSubset(input, s));
-            for (; ; ) {
-                int i;
-                // find position of item that can be incremented
-                for (i = k - 1; i >= 0 && s[i] == input.length - k + i; i--) ;
-                if (i < 0) {
-                    break;
-                } else {
-                    s[i]++;                    // increment this item
-                    for (++i; i < k; i++) {    // fill up remaining items
-                        s[i] = s[i - 1] + 1;
-                    }
-                    subsets.add(getSubset(input, s));
-                }
-            }
-        }
-
-        return subsets;
-    }
-
-    // generate actual subset by index sequence
-    private static int[] getSubset(int[] input, int[] subset) {
-        int[] result = new int[subset.length];
-        for (int i = 0; i < subset.length; i++)
-            result[i] = input[subset[i]];
-        return result;
-    }
-
+/*
     private static String doNested(String word, double threshold) {
 
         Stack<String> localSuffixes = new Stack<String>();
@@ -194,28 +168,22 @@ public class FullUnsupervisedSegmentation {
 
     public static void main(String[] args) throws IOException {
 
-        /*
-        String tFile = "/Users/ahmet/Desktop/ccglab-test/test";
+        String[] test2 = {"beginner's"};
+        String[] test3 = {"beauticians'", "recommendations'"};
 
-        BufferedReader reader = new BufferedReader(new FileReader(tFile));
-
-        String line;
-        while ((line = reader.readLine()) != null) {
-            StringTokenizer st = new StringTokenizer(line, " ");
-            String word = st.nextToken();
-
-            System.out.println(doNested(word, threshold));
-        }
-        */
-
-        String[] test = {"arabaları", "evlerim", "gelmişti", "yazacakmış", "defterinizin"};
-
-        for (String word : test) {
+        for (String word : test3) {
             System.out.println("==========================================================");
             for (String s : getAllPossibleSplits(word, 3)) {
                 System.out.println(s);
             }
         }
-    }
 
+        for (String word : test2) {
+            System.out.println("==========================================================");
+            for (String s : getAllPossibleSplits(word, 2)) {
+                System.out.println(s);
+            }
+        }
+    }
+*/
 }
