@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Utils {
@@ -30,10 +31,21 @@ public class Utils {
 
         String stem = "";
         for (int i = 2; i < word.length(); i++) {
-            stem = word.substring(0,i);
-            getPossibleAffixSequence(stem, word.substring(stem.length()), pSegmentations, morphemeNo-1, 1);
+            stem = word.substring(0, i);
+            getPossibleAffixSequence(stem, word.substring(stem.length()), pSegmentations, morphemeNo - 1, 1);
         }
         return pSegmentations;
+    }
+
+    public static <T> List<T> randomSubList(List<T> list, int newSize) {
+
+        if (!(list.size() > newSize)) {
+            return list;
+        }
+
+        list = new ArrayList<>(list);
+        Collections.shuffle(list);
+        return list.subList(0, newSize);
     }
 
     public static void main(String[] args) {

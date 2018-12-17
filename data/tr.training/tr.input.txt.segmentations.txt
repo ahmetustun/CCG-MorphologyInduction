@@ -40,6 +40,7 @@ adımla r ı nda
 adım la rında
 adı ysa
 ahlak ımız a
+ak lınız
 aklı nız
 aklını z
 aklı nız
@@ -78,11 +79,10 @@ ap o letleri
 apoletler i
 arar ım
 arar ım
-ar aştırma larımız
-araşt ırma larımız
-araştı rma larımız
 araştır malarım ız
+araşt ırma larımız
 araştırma lar ımız
+ar aştırma larımız
 arzu m
 arzun u zun
 arzun uz un
@@ -92,12 +92,10 @@ arşiv lenmesi ni
 arşivlenme si ni
 asbaşkan ı
 asbaşkan ı
-asit le rden
 asit ler den
-asit lerde n
-asitle r den
-asitle rde n
 asitler de n
+asitle rde n
+asitle r den
 askeriy ede
 ast lar a
 astlar ı n
@@ -127,20 +125,17 @@ açıklamaları dır
 açıklama sı na
 açıklan abilmiş
 açılım ları nda n
-açılım ların da n
 açılımlar ı nda n
+açılımları n da n
 açılımlar ın da n
 açılımları n da n
+açılımlar ı nda n
+açılım ların da n
 açılım ları nda n
-açılım ların da n
-açılımlar ı nda n
-açılımlar ın da n
-açılımları n da n
 açılım ları nda n
-açılım ların da n
 açılımlar ı nda n
 açılımlar ın da n
-açılımları n da n
+açılım ların da n
 açılımları nda n
 açılımların da n
 ağaçlan dırılması
@@ -167,12 +162,10 @@ aşı lar ı nda
 aşı lar ın da
 aşı ları n da
 aşılar ı n da
-aşı lar ında
-aşı ları nda
-aşı ların da
-aşılar ı nda
 aşılar ın da
 aşıları n da
+aşı lar ında
+aşı ların da
 aşı sı na
 aşı yı
 baba yla
@@ -226,11 +219,10 @@ başparmağı n
 başvurun uz
 başvurun uz
 başvuru yu
-besin ler den
-besin lerde n
-besinle r den
 besinle rde n
-besinler de n
+besin lerde n
+besin ler den
+besinle r den
 beste si
 beste yi
 beya z lığına
@@ -268,12 +260,10 @@ bi r le rine
 bir le ri ne
 birl e ri ne
 birle r in e
-bi r lerine
-bi rlerin e
-bir le rine
-birl e rine
-birle ri ne
 birler in e
+birle ri ne
+birl e rine
+bi rlerin e
 birleş meli
 birleşti rildi
 birlik ler i
@@ -295,21 +285,18 @@ borular ı n ı
 boru lar ı nı
 boru lar ın ı
 borular ı n ı
-boru lar ını
+borular ın ı
 boru ların ı
 borular ı nı
-borular ın ı
-boruları n ı
 boru lar ını
+boru lar ını
+boruları n ı
+borular ın ı
+borular ı nı
 boru ların ı
 borular ı nı
-borular ın ı
 boruları n ı
 boru lar ını
-boru ların ı
-borular ı nı
-borular ın ı
-boruları n ı
 boyunuz u n
 bozukluğu n
 bozukluğu n
@@ -386,8 +373,7 @@ demokrasiler i
 denetim i yle
 dengesizlik ler
 dengesizlikle r
-depo lanma z
-depola nma z
+depolan ma z
 deprem in
 depremi n
 deprem in
@@ -604,10 +590,9 @@ fragman la rın a
 fragman lar ı na
 fragman la rın a
 fragman lar ı na
-frag manların a
-fragman ları na
-fragman ların a
 fragmanla rın a
+frag manların a
+fragman ların a
 fragmanlar ı na
 frekans lar
 fukara sı
@@ -623,12 +608,10 @@ füze ler i ne
 füze ler in e
 füze leri n e
 füzeler i n e
-füze ler ine
+füzeler in e
 füze leri ne
 füze lerin e
-füzeler i ne
-füzeler in e
-füzeleri n e
+füze ler ine
 galatasaray lıyım
 galatasaraylı yım
 galatas arayı
@@ -669,11 +652,9 @@ genç likle ri nin
 genç likle rini n
 gençlikle ri ni n
 gençlikle ri nin
-genç liğin izi
 genç liğini zi
-gençliği n izi
-gençliği ni zi
 gençliğin i zi
+gençliği n izi
 gençliğini z i
 gerekçe yle
 gerilim den
@@ -705,24 +686,16 @@ gerçekleşmeler i ni
 gerçekleştirdi kten
 gerçekleş tirdiğiniz
 gerçekleştir eceğiniz
+gerç ekleş tirilebileceğine
+gerçekleştiri le bileceğine
+gerçekleş tirile bileceğine
+gerç ekleştirile bileceğine
+gerç ekleştirile bileceğine
 ge rçekleş tirilebileceğine
 gerç ekleş tirilebileceğine
-gerç ekleştirile bileceğine
-gerçekl eş tirilebileceğine
 gerçekl eştirile bileceğine
-gerçekleş tirile bileceğine
-gerçekleştiri le bileceğine
-gerçekleştiril e bileceğine
-ge rçekleş tirilebileceğine
-gerç ekleş tirilebileceğine
-gerç ekleştirile bileceğine
-gerçekl eş tirilebileceğine
-gerçekl eştirile bileceğine
-gerçekleş tirile bileceğine
-gerçekleştiri le bileceğine
-gerçekleştiril e bileceğine
 gerçekleştirmek le
-ge rçekleştirme miş
+gerçekleştir me miş
 gerçekleştirme sidir
 gerçeği ydi
 getiri ler i nin
@@ -770,6 +743,7 @@ gör gül erini
 görgül eri ni
 görünüş ler de
 görüs ün ü
+gö rüyüm
 görüyü m
 gösterim le ri nde
 gösterim le ri nde
@@ -888,9 +862,8 @@ hisse leri n i
 hisseler i n i
 hisse leri ni
 hisse lerin i
-hisseler i ni
 hisseler in i
-hisseleri n i
+hisseler i ni
 hisse ler i yle
 hisse ler i yle
 hisse leri yle
@@ -929,10 +902,10 @@ ihtilal i ni
 ihtilal ler
 ihtiyaç ları mız a
 ihtiyaçlar ı mız a
-ilg il endik
 ilgil en dik
-ilgil endi k
 ilgile n dik
+ilg il endik
+ilgilen di k
 ilg il endik lerini
 ilgil en dik lerini
 ilgil endi k lerini
@@ -957,63 +930,22 @@ ilgili yim
 ilim le rle
 il ler
 il ler le
-imparator lu klar ını
-imparator lu kları nı
-imparator luk lar ını
-imparator luk ları nı
 imparator lukla r ını
-imparator lukla rı nı
-imparator luklar ı nı
-imparatorlu k lar ını
-imparatorlu k ları nı
-imparatorlu kla r ını
-imparatorlu kla rı nı
-imparatorlu klar ı nı
-imparatorluk la r ını
-imparatorluk la rı nı
-imparatorluk lar ı nı
-imparatorlukla r ı nı
-imparator lu klar ını
-imparator lu kları nı
-imparator luk lar ını
 imparator luk ları nı
-imparator lukla r ını
-imparator lukla rı nı
 imparator luklar ı nı
-imparatorlu k lar ını
-imparatorlu k ları nı
-imparatorlu kla r ını
-imparatorlu kla rı nı
-imparatorlu klar ı nı
 imparatorluk la r ını
+imparatorlu kla r ını
+imparatorlu klar ı nı
+imparatorlu k lar ını
 imparatorluk la rı nı
-imparatorluk lar ı nı
-imparatorlukla r ı nı
-imparator lu klar ını
-imparator lu kları nı
-imparator luk lar ını
-imparator luk ları nı
-imparator lukla r ını
 imparator lukla rı nı
-imparator luklar ı nı
-imparatorlu k lar ını
-imparatorlu k ları nı
-imparatorlu kla r ını
-imparatorlu kla rı nı
-imparatorlu klar ı nı
+imparator lukla r ını
 imparatorluk la r ını
-imparatorluk la rı nı
-imparatorluk lar ı nı
-imparatorlukla r ı nı
+imparatorlu kla r ını
 imparator luklar ını
-imparator lukları nı
-imparatorlu klar ını
-imparatorlu kları nı
-imparatorluk lar ını
-imparatorluk ları nı
-imparatorlukla r ını
-imparatorlukla rı nı
 imparatorluklar ı nı
+imparatorluk ları nı
+imparator lukları nı
 insan ı mızı
 insanı sınız
 irade si yle
@@ -1021,6 +953,7 @@ istanbullu lar
 istanbulu n
 istanbulu n
 is te rdin
+iste r din
 isteği nde dir
 isteği nde dir
 istikamette dir
@@ -1031,7 +964,7 @@ izah ı nın
 izah ı nın
 izin dir
 izindi r
-izlen e miyor
+izl ene miyor
 iz ler idir
 iz leri dir
 izler i dir
@@ -1104,19 +1037,10 @@ kapasite leri ni
 kararlı lığı
 kararlı lığı
 kardeşi dir
-kardeş le ri nizle
-kardeş le rini zle
-kardeş ler i nizle
-kardeş ler ini zle
-kardeş leri ni zle
-kardeş lerin i zle
-kardeşle r i nizle
-kardeşle r ini zle
-kardeşle ri ni zle
-kardeşle rin i zle
 kardeşler i ni zle
-kardeşler in i zle
-kardeşleri n i zle
+kardeşle rin i zle
+kardeş ler ini zle
+kardeşle r ini zle
 kardeş le rinizle
 ka rsa
 ka rsa
@@ -1175,53 +1099,22 @@ kişi ni n
 kişi ni n
 komite ce
 komite dir
-komp o zisyonların da
-komp ozisyonla rın da
-komp ozisyonlar ın da
-komp ozisyonları n da
-kompo zisyonla rın da
-kompoz isyonla rın da
-kompoz isyonlar ın da
 kompoz isyonları n da
 kompozisyon la rın da
-kompozisyon lar ın da
 kompozisyon ları n da
-kompozisyonla r ın da
-kompozisyonla rı n da
-kompozisyonlar ı n da
-komp o zisyonların da
-komp ozisyonla rın da
-komp ozisyonlar ın da
-komp ozisyonları n da
-kompo zisyonla rın da
 kompoz isyonla rın da
-kompoz isyonlar ın da
+komp ozisyonlar ın da
 kompoz isyonları n da
 kompozisyon la rın da
-kompozisyon lar ın da
 kompozisyon ları n da
-kompozisyonla r ın da
-kompozisyonla rı n da
-kompozisyonlar ı n da
-komp o zisyonların da
-komp ozisyonla rın da
-komp ozisyonlar ın da
 komp ozisyonları n da
-kompo zisyonla rın da
-kompoz isyonla rın da
-kompoz isyonlar ın da
 kompoz isyonları n da
-kompozisyon la rın da
-kompozisyon lar ın da
-kompozisyon ları n da
-kompozisyonla r ın da
-kompozisyonla rı n da
-kompozisyonlar ı n da
-komp ozisyonların da
-kompo zisyonların da
-kompozisyonla rın da
-kompozisyonlar ın da
+kompo zisyonla rın da
+komp ozisyonlar ın da
 kompozisyonları n da
+kompo zisyonların da
+kompozisyonlar ın da
+kompozisyonla rın da
 komp ozisyonu
 kompozisyon u
 komp ozisyonu
@@ -1230,22 +1123,20 @@ komşu nu zu
 komşun u zu
 konsept i
 konsept i
-konsey i nin
 konsey in in
 konseyi n in
-konseyi ni n
 konseyin i n
 konsey i nin
 konsey in in
-konseyi n in
+konsey i nin
 konseyi ni n
-konseyin i n
+konseyi n in
 konteyner e
 kontrolör lüğü
 kontrolör lüğü
 konum lanmış
 konut tur
-konuş tun uz
+konu ştun uz
 konu şu nda
 konu şu nda
 konvoy lar la
@@ -1273,9 +1164,6 @@ kroki lerin in
 krokiler in in
 krokileri n in
 kull a nabiliyordu
-kull an ma zlar
-kull an maz lar
-kull anma z lar
 kullan ma z lar
 kullanım ı ndan
 kullanım ı ndan
@@ -1405,8 +1293,8 @@ metin e
 mevzilenme si
 meydan ı nda
 meydan ı nda
-meşgulsün üz
-meşgulsün üz
+me şgulsünüz
+me şgulsünüz
 meşgulsün üz
 midye nin
 mimik leri n
@@ -1442,41 +1330,22 @@ muradı n ı
 mutfak lar
 muş ta
 müdahale ler
+mükellefler i n den
+mükellef ler in den
+mükellefler in de n
 mükellef ler i nden
 mükellef ler in den
-mükellef leri n den
-mükellef leri nde n
-mükellef lerin de n
 mükellefler i n den
 mükellefler i nde n
-mükellefler in de n
-mükellefleri n de n
-mükellef ler i nden
+mükellef leri n den
+mükellefler i n den
 mükellef ler in den
 mükellef leri n den
-mükellef leri nde n
-mükellef lerin de n
-mükellefler i n den
 mükellefler i nde n
-mükellefler in de n
-mükellefleri n de n
-mükellef ler i nden
-mükellef ler in den
-mükellef leri n den
-mükellef leri nde n
-mükellef lerin de n
-mükellefler i n den
-mükellefler i nde n
-mükellefler in de n
-mükellefleri n de n
-mükellef ler inden
-mükellef leri nden
 mükellef lerin den
-mükellefler i nden
-mükellefler in den
 mükellefleri n den
-mükellefleri nde n
-mükelleflerin de n
+mükellefler in den
+mükellefler i nden
 müktesebat ı nı
 müktesebat ın ı
 müktesebatı n ı
@@ -1519,10 +1388,9 @@ müzisyen le r iyle
 müzisyen ler i yle
 müzisyenle r i yle
 müzisyen le riyle
-müzisyen ler iyle
-müzisyen leri yle
-müzisyenle r iyle
 müzisyenler i yle
+müzisyenle r iyle
+müzisyen leri yle
 nahiyeler i n de
 nahiyeler i n de
 nahiyeler i n de
@@ -1641,12 +1509,10 @@ prim ler i ni
 prim ler in i
 prim leri n i
 primler i n i
-prim ler ini
 prim leri ni
-prim lerin i
 primler i ni
+prim lerin i
 primler in i
-primleri n i
 puan ı nda
 puan ı nda
 rakip ler
@@ -1685,73 +1551,29 @@ sahanlığı nı n
 sahil i
 sahil i
 saklı ydı
+sakın ım
 salgın lar a
 sandalye ler i ni
 sandalye ler i ni
 sandalye ler i ni
 sandalyeler i ni
 sanrı lar
-santral ler i nin
-santral ler in in
-santral ler ini n
-santral leri n in
-santral leri ni n
 santral lerin i n
-santralle r i nin
+santralle r ini n
 santralle r in in
+santralle ri ni n
+santral lerin i n
+santraller in i n
+santralle r in in
+santraller i n in
+santraller i n in
 santralle r ini n
 santralle ri n in
-santralle ri ni n
-santralle rin i n
-santraller i n in
-santraller i ni n
 santraller in i n
-santralleri n i n
-santral ler i nin
-santral ler in in
-santral ler ini n
-santral leri n in
-santral leri ni n
-santral lerin i n
-santralle r i nin
-santralle r in in
-santralle r ini n
-santralle ri n in
-santralle ri ni n
-santralle rin i n
-santraller i n in
-santraller i ni n
-santraller in i n
-santralleri n i n
-santral ler i nin
-santral ler in in
-santral ler ini n
-santral leri n in
-santral leri ni n
-santral lerin i n
-santralle r i nin
-santralle r in in
-santralle r ini n
-santralle ri n in
-santralle ri ni n
-santralle rin i n
-santraller i n in
-santraller i ni n
-santraller in i n
-santralleri n i n
-santral ler inin
-santral leri nin
-santral lerin in
 santral lerini n
-santralle r inin
-santralle ri nin
-santralle rin in
-santraller i nin
+santral lerin in
 santraller in in
 santraller ini n
-santralleri n in
-santralleri ni n
-santrallerin i n
 sarımsağı n
 sarımsağı n
 savaş ta
@@ -1778,6 +1600,7 @@ sendrom u
 sergi lenmeye
 sergi len meye
 sergi lenme ye
+sergile n meye
 sergi ler i ne
 sergi ler i ne
 sergi ler i ne
@@ -1838,16 +1661,12 @@ soykırım ın
 soykırımı n
 soykırım ı nın
 soykırım ın ın
-soykırım ını n
-soykırımı n ın
 soykırımı nı n
 soykırımın ı n
+soykırım ını n
 soykırım ı nın
-soykırım ın ın
-soykırım ını n
 soykırımı n ın
 soykırımı nı n
-soykırımın ı n
 stoku n
 stoku n
 strateji si nin
@@ -1939,21 +1758,18 @@ temizlen sin
 tempo yu
 tercihim di r
 tercihimdi r
-tercih ler i nde
-tercih ler in de
+tercihler i n de
 tercihle r i nde
 tercihle r in de
-tercihler i n de
 tercih ler i nde
-tercih ler in de
 tercihle r i nde
-tercihle r in de
 tercihler i n de
+tercihle r in de
+tercih ler in de
+tercihle r in de
+tercih ler in de
 tercih ler i nde
-tercih ler in de
 tercihle r i nde
-tercihle r in de
-tercihler i n de
 tercihler i nde
 terminal i ne
 terminal i ne
@@ -1971,14 +1787,14 @@ teşvik le r iyle
 teşvik le ri yle
 teşvik ler i yle
 teşvikle r i yle
-teşvik ler iyle
-teşvik leri yle
-teşvikle r iyle
-teşvikle ri yle
 teşvikler i yle
+teşvikle ri yle
+teşvikle r iyle
+teşvik ler iyle
 ticaret imiz i
 tiyatro lar da
 tiyatro su na
+to plana madı
 topl ana madı
 toplanmışlar dı
 tor un ları nı
@@ -2004,18 +1820,14 @@ töreni n de
 tören i nde
 tören in de
 töreni n de
-tören i nden
-tören in den
-tören inde n
 töreni n den
 töreni nde n
-törenin de n
-tören i nden
-tören in den
 tören inde n
-töreni n den
-töreni nde n
 törenin de n
+töreni n den
+törenin de n
+töreni nde n
+tören in den
 tören le rle
 tören ler le
 tüfeği miz
@@ -2066,45 +1878,25 @@ vekil i ni
 vekil i ni
 verg isi ni
 vergi si ni
-veri ler ini zi
-veri leri ni zi
 veri lerin i zi
-veriler i ni zi
-veriler in i zi
 verileri n i zi
+veri leri ni zi
+veri ler ini zi
 ve ri tabanları yla
 ve ri tabanları yla
 veri tabanları yla
-vit ami n leriyle
-vit ami nler iyle
-vit ami nleri yle
-vit amin ler iyle
-vit amin leri yle
-vit aminler i yle
-vitami n ler iyle
-vitami n leri yle
-vitami nler i yle
 vitamin ler i yle
-vit ami n leriyle
-vit ami nler iyle
-vit ami nleri yle
-vit amin ler iyle
 vit amin leri yle
-vit aminler i yle
 vitami n ler iyle
-vitami n leri yle
+vit amin ler iyle
+vit aminler i yle
 vitami nler i yle
+vitami n leri yle
 vitamin ler i yle
-vit ami nleriyle
-vit amin leriyle
-vit aminler iyle
 vit aminleri yle
-vitami n leriyle
-vitami nler iyle
-vitami nleri yle
-vitamin ler iyle
+vit ami nleriyle
 vitamin leri yle
-vitaminler i yle
+vitami n leriyle
 yakan ı zda
 yak tı n
 yakınlar ın ız la
@@ -2146,14 +1938,15 @@ yapım ı n
 yapım ın
 yap ın ca
 yapıt lar dan
-ya rarlana mayacak
-yar arlana mayacak
+yara rlana mayacak
 yararl ana mayacak
 yararla na mayacak
+ya rarlana mayacak
 ya rasaydı
 yargı dan
 yargı dır
 yargı lan amaz lar
+yargıla n amaz lar
 yargılan ması
 yargıtay dır
 yargı tayın
@@ -2187,6 +1980,7 @@ yemekhane si
 yeni lenme
 yenilik tir
 yenilikti r
+ye rdi m
 yerd i m
 ye rinede
 yeri niz
@@ -2300,30 +2094,21 @@ zorlaştırdı ğı
 ödenti ler in
 ödenti leri n
 ödentiler i n
-ödenti ler i nin
-ödenti ler in in
-ödenti leri n in
 ödenti leri ni n
+ödenti leri n in
+ödentiler i ni n
+ödenti ler i nin
+ödenti leri ni n
+ödenti leri n in
 ödentiler i n in
 ödentiler i ni n
 ödenti ler i nin
-ödenti ler in in
 ödenti leri n in
-ödenti leri ni n
-ödentiler i n in
 ödentiler i ni n
-ödenti ler i nin
-ödenti ler in in
-ödenti leri n in
-ödenti leri ni n
 ödentiler i n in
-ödentiler i ni n
 ödenti ler inin
-ödenti leri nin
-ödenti lerin in
 ödentiler i nin
 ödentiler in in
-ödentileri n in
 ödentileri ni n
 öfke lenmiş ti
 öf kelenmişti
@@ -2337,35 +2122,22 @@ zorlaştırdı ğı
 önlem idir
 önlem ler de
 önlem ler den
+önlemler i ni n
 önlem ler i nin
-önlem ler in in
-önlem ler ini n
-önlem leri n in
 önlem leri ni n
-önlemler i n in
+önlem ler ini n
+önlem leri ni n
 önlemler i ni n
 önlem ler i nin
 önlem ler in in
-önlem ler ini n
-önlem leri n in
-önlem leri ni n
-önlemler i n in
-önlemler i ni n
 önlem ler i nin
-önlem ler in in
-önlem ler ini n
-önlem leri n in
 önlem leri ni n
-önlemler i n in
+önlem ler in in
 önlemler i ni n
-önlem ler inin
-önlem leri nin
-önlem lerin in
-önlemler i nin
-önlemler in in
-önlemler ini n
-önlemleri n in
 önlemleri ni n
+önlem ler inin
+önlemler ini n
+önlemler i nin
 örgütlenme ler e
 örgütlülüğü n
 örgütlülüğü n
@@ -2394,28 +2166,14 @@ zorlaştırdı ğı
 ünl enmiştir
 ünle nmiştir
 ünl e nmiştir
-ürün le rim izden
-ürün le rimiz den
-ürün ler im izden
-ürün ler imiz den
-ürün leri miz den
 ürünl eri miz den
+ürün ler im izden
 ürünle r im izden
 ürünle r imiz den
-ürünle rim iz den
-ürünle rimi z den
-ürünler i miz den
-ürünler im iz den
-ürünler imi z den
-ürünlerim i z den
-ürün lerimiz den
 ürünle rim izden
-ürünle rimiz den
+ürün lerimiz den
 ürünler im izden
-ürünler imiz den
-ürünleri miz den
-ürünlerim iz den
-ürünlerimi z den
+ürünle rimiz den
 ürün leriniz
 ürünle riniz
 ürünler iniz
@@ -2480,268 +2238,22 @@ zorlaştırdı ğı
 şubeler de n
 şüphe lenildiği nde
 şüphe lenildiği nde
-abone lik leri
-abonelik le ri
-abonelik ler i
-abonelikle r i
-abone lik leri
-abonelik le ri
-abonelik ler i
-abonelikle r i
-abone lik leri
-abonelik le ri
-abonelik ler i
-abonelikle r i
-ayna larda n
-aşı lar ı nda
-aşı lar ın da
-aşı ları n da
-aşılar ı n da
-aşı lar ı nda
-aşı lar ın da
-aşı ları n da
-aşılar ı n da
-aşı lar ı nda
-aşı lar ın da
-aşı ları n da
-aşılar ı n da
-aşı lar ında
-aşı ları nda
-aşı ların da
-aşılar ı nda
-aşılar ın da
-aşıları n da
-aşı sı na
-beya z lığına
-beya zlığı na
-beya z lığına
-beya zlığı na
-beyaz ı na
-beyaz ı na
-bi r le rine
-bir le ri ne
-birl e ri ne
-birle r in e
-bi r le rine
-bir le ri ne
-birl e ri ne
-birle r in e
-bi r le rine
-bir le ri ne
-birl e ri ne
-birle r in e
-bi r lerine
-bi rlerin e
-bir le rine
-birl e rine
-birle ri ne
-birler in e
-birlik ler i
-birlik ler i
-birlik ler i
-birlikler i n de
-birlikler i n de
-birlikler i n de
-birlikler in de
-birlikleri n de
-dallar ı nda n
-dallar ı nda n
-dallar ı nda n
-dallar ı ndan
-dalları nda n
-din i mizin
-din imiz in
-dini miz in
-dinimiz i n
 dolu sun u
-dolu sun u
-düdüğü n ü
-düdüğü n ü
-dışı nda ymış
-dışı nda ymış
-ef endi ler ini
-ef endi ler ini
-ef endi ler ini
-efendi ler ini
-efendileri n i
-erkeği n e
-erkeği n e
-esas ı yla
-eşi m i
-fedakarlığı n ı
-fedakarlığı n ı
-gençler i mizi n
-genç likle ri ni
-genç likle ri ni
-genç likle ri ni
-gençlikle ri ni
-genç likle ri nin
-genç likle rini n
-gençlikle ri ni n
-genç likle ri nin
-genç likle rini n
-gençlikle ri ni n
-genç likle ri nin
-genç likle rini n
-gençlikle ri ni n
-gençlikle ri nin
-genç liğin izi
-genç liğini zi
-gençliği n izi
-gençliği ni zi
-gençliğin i zi
-gençliğini z i
-ger ili mden
-geril i mden
-gerili mde n
-gerilim de n
-gerçek ler den
-insan ı mızı
-içerik ler den
-iç i nde
-iç i nde
-içini z de
-kahraman lar ı mızın
-kal bim izde
-kalb i mizde
-kalbi m izde
-kalbim iz de
-kal bim le
-kalb im le
-kalbi m le
-kalb i nden
-kalıp lar ı
-kalıp lar ı
-kalıp lar ı
-kardeş le ri nizle
-kardeş le rini zle
-kardeş ler i nizle
-kardeş ler ini zle
-kardeş leri ni zle
-kardeş lerin i zle
-kardeşle r i nizle
-kardeşle r ini zle
-kardeşle ri ni zle
-kardeşle rin i zle
-kardeşler i ni zle
-kardeşler in i zle
-kardeşleri n i zle
-karşıla ş tığımızı
 karşı laşıyor lar
-katil i ni
-katil i ni
-kemik ler e
-komşu nu zu
-komşun u zu
-kopyala r ı
-kopyala r ı
-kopyala r ı
-mermer i nden
-mermer in den
-mermer i nden
-mermer in den
-mükellef ler i nden
-mükellef ler in den
-mükellef leri n den
-mükellef leri nde n
-mükellef lerin de n
-mükellefler i n den
-mükellefler i nde n
-mükellefler in de n
-mükellefleri n de n
-mükellef ler i nden
-mükellef ler in den
-mükellef leri n den
-mükellef leri nde n
-mükellef lerin de n
-mükellefler i n den
-mükellefler i nde n
-mükellefler in de n
-mükellefleri n de n
-mükellef ler i nden
-mükellef ler in den
-mükellef leri n den
-mükellef leri nde n
-mükellef lerin de n
-mükellefler i n den
-mükellefler i nde n
-mükellefler in de n
-mükellefleri n de n
-mükellef ler inden
-mükellef leri nden
-mükellef lerin den
-mükellefler i nden
-mükellefler in den
-mükellefleri n den
-mükellefleri nde n
-mükelleflerin de n
-mümin ler i
-mümin ler i
-mümin ler i
-nazırı nı n
-nazırı nı n
-ot lar la
-pis liği ni
-pisliği n i
-pis liği ni
-pisliği n i
 sakinler i n i
 sakinler i n i
 sakinler i n i
 sakinler i ni
 sakinleri n i
-salgın lar a
 savaş ma nın
 savurganlığı nı n
 savurganlığın ı n
 savurganlığı nı n
 savurganlığın ı n
-seriler i n i
-seriler i n i
-seriler i n i
-seriler i ni
-seriler in i
-serileri n i
 soğukkanlılığı nı zı
-temel inde n
-temeli nde n
-temel inde n
-temeli nde n
-türü n ü
-türü n ü
-yakınlar ın ız la
-yanlış la rı
-yanlış la rı
-yanlış la rı
-ya nlış la rınızı
-yaş lı sıyla
-yaşlı sı yla
-yokluğu n u
-yokluğu n u
-yüksekler de n
-yüksekliği n in
-yüksekliği ni n
-yüksekliği n in
-yüksekliği ni n
-çıkmaz ı na
-çıkmaz ı na
-ölç eği ne
-ölç eği ne
-özgür lüğü mü
 üç ün cüsünün
 üçü n cüsünün
 üçüncü sü nün
-şair ler in den
-şair leri n den
-şair ler in den
-şair leri n den
-şair ler in den
-şair leri n den
-şair leri nden
-şair lerin den
-şairler in den
-şairleri n den
-şekli n den
 akla mış
 aksı yor
 al ma ya lım
@@ -2837,11 +2349,10 @@ hat ı rlamıyo rum
 ha tırlıyo rdu
 hesapla mış
 ilerliyo r du k
-ilg il endik
 ilgil en dik
-ilgil endi k
-ilgile n dik
+ilg il endik
 ilgilen di k
+ilgile n dik
 imzala mış lar dı
 inan mam ı ştır
 irdele yin
@@ -2942,11 +2453,10 @@ yönelme kte dir
 yönelmek te dir
 yönet ir ler
 çal dı lar
-çalış ıyor sunuz
-çalış ıyorsun uz
 çalışıyo r sunuz
-çalışıyo rsun uz
 çalışıyor sun uz
+çalışıyo rsun uz
+çalış ıyorsun uz
 çalış ıyor um
 çalışıyo r um
 çarp a rlar
@@ -2979,8 +2489,4 @@ yönet ir ler
 üret mek teler
 üretme k teler
 üz ü l müyorum
-at ıldı nız
-at ıldın ız
-atıl dı nız
-atıl dın ız
 savaş ıyor lar dı

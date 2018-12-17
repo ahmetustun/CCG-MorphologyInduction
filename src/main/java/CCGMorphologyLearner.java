@@ -22,12 +22,17 @@ public class CCGMorphologyLearner {
     public static List<String> segmentations = new ArrayList<>();
     public static Set<String> supEntry = new HashSet<>();
 
-    public static String lang = "tr";
+    public static String lang = "en";
 
     /* ================================ Vector Loading =========================================== */
 
-    public static void loadVectors(String vectorFile) throws IOException {
-        vectors = WordVectorSerializer.loadTxtVectors(new File(vectorFile));
+    public static void loadVectors(String vectorFile, boolean google) throws IOException {
+
+        if (!google) {
+            vectors = WordVectorSerializer.loadTxtVectors(new File(vectorFile));
+        } else {
+            vectors = WordVectorSerializer.loadGoogleModel(new File(vectorFile), true);
+        }
     }
 
     /* ================================ Pre-Processes on Training Data =========================================== */
@@ -97,6 +102,51 @@ public class CCGMorphologyLearner {
         }
 
         writer.close();
+    }
+
+    public static void reduceData(String inFile) throws IOException {
+        BufferedReader reader = new BufferedReader(new FileReader(inFile));
+        FileWriter reduced = new FileWriter(inFile + ".reduced");
+
+        HashMap<String, ArrayList<String>> word2inflection = new HashMap<>();
+
+        String line;
+        while ((line = reader.readLine()) != null) {
+
+            String word;
+            String pos;
+            String mor;
+            try {
+                StringTokenizer st = new StringTokenizer(line, " ");
+
+                word = st.nextToken();
+                pos = st.nextToken();
+                mor = st.nextToken();
+            } catch (Exception e) {
+                continue;
+            }
+
+            StringTokenizer tokenizer = new StringTokenizer(mor, ",");
+            String[] tags = mor.split(",");
+
+            String word_inf = word + "#" + Integer.toString(tags.length);
+            if (word2inflection.containsKey(word_inf)) {
+                ArrayList<String> inflections = word2inflection.get(word_inf);
+                inflections.add(line);
+                word2inflection.put(word_inf, inflections);
+            } else {
+                ArrayList<String> inflections = new ArrayList<>();
+                inflections.add(line);
+                word2inflection.put(word_inf, inflections);
+            }
+        }
+
+        Random r = new Random();
+
+        for (String w : word2inflection.keySet()) {
+            ArrayList<String> inflections = word2inflection.get(w);
+            reduced.write(inflections.get(r.nextInt(inflections.size())) + "\n");
+        }
     }
 
     /* ================================ Logical Form Operation =========================================== */
@@ -178,7 +228,7 @@ public class CCGMorphologyLearner {
             String[] tags = mor.split(",");
             int suffixNo = tags.length;
 
-            for (String s : FullUnsupervisedSegmentation.getAllPossibleSplits(word, suffixNo+1, threshold, vectors, pos)) {
+            for (String s : FullUnsupervisedSegmentation.getAllPossibleSplits(word, suffixNo + 1, threshold, vectors, pos, 4)) {
 
                 segmentations.add(s);
 
@@ -244,8 +294,19 @@ public class CCGMorphologyLearner {
 
     /* ================================ Main =========================================== */
 
+    private static String TR_VEC = "/Users/ahmetustun/Desktop/nlp-tools/vectors.txt";
+    public static String FIN_VEC = "/Users/ahmetustun/Desktop/nlp-tools/fin/42/model.txt";
+    public static String EN_VEC = "/Users/ahmetustun/Desktop/nlp-tools/google_vec.bin";
+
+    public static String to_be_reduced_data = "data/fin.training/fin.input.txt";
+    public static String training_data = "data/fin.training/fin.input.txt.reduced";
+    public static String test_data = "data/input.txt";
+
     public static void main(String[] args) throws IOException {
-        loadVectors("/Users/ahmetustun/Desktop/nlp-tools/fin/42/model.txt");
+
+        reduceData(to_be_reduced_data);
+
+        loadVectors(FIN_VEC, false);
         System.out.println("========== Vector file is loaded ==========");
 
         /*
@@ -257,7 +318,7 @@ public class CCGMorphologyLearner {
         System.out.println("========== Training data is cropped ==========");
         */
 
-        String data = "data/fin.training/fin.input.txt";
+        String data = training_data;
 
         morphoGenLex(data);
         System.out.println("========== Morphological-GenLex operation is finished ==========");

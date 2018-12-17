@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class FullUnsupervisedSegmentation {
 
-    private static String lang = "fin";
+    private static String lang = "en";
 
     /*
     static {
@@ -51,7 +51,7 @@ public class FullUnsupervisedSegmentation {
 
     */
 
-    public static List<String> getAllPossibleSplits(String word, int morphemeNo, double threshold, WordVectors vectors, String pos) {
+    public static List<String> getAllPossibleSplits(String word, int morphemeNo, double threshold, WordVectors vectors, String pos, int max) {
 
         List<String> tmpResults = new ArrayList<>();
 
@@ -80,6 +80,7 @@ public class FullUnsupervisedSegmentation {
             tResults = getSplitByThreshold(tmpResults, th, vectors, pos);
         } while ((tResults.size() == 0) && (th >= 0.19d));
 
+
         if (split && sWord.length > 1) {
             for (String res : tResults) {
                 results.add(res + " '" + sWord[1]);
@@ -88,9 +89,9 @@ public class FullUnsupervisedSegmentation {
             for (String res : tResults) {
                 results.add(res + " '");
             }
-        } else return tResults;
+        } else return Utils.randomSubList(tResults, max);
 
-        return results;
+        return Utils.randomSubList(results, max);
     }
 
     public static List<String> getSplitByThreshold(List<String> all, double threshold, WordVectors vectors, String pos) {
