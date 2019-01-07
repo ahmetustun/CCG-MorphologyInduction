@@ -147,6 +147,7 @@ public class CCGMorphologyLearner {
             ArrayList<String> inflections = word2inflection.get(w);
             reduced.write(inflections.get(r.nextInt(inflections.size())) + "\n");
         }
+
     }
 
     /* ================================ Logical Form Operation =========================================== */
@@ -177,13 +178,13 @@ public class CCGMorphologyLearner {
 
         if (pos.equalsIgnoreCase("n")) {
             for (String meaning : semantics) {
-                morphemeEntry.add(suffix + " s := np/np: \\x.!" + meaning + " x;\n");
-                morphemeEntry.add(suffix + " s := np\\np: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := np/^np: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := np\\^np: \\x.!" + meaning + " x;\n");
             }
         } else if (pos.equalsIgnoreCase("v")) {
             for (String meaning : semantics) {
-                morphemeEntry.add(suffix + " s := vp/vp: \\x.!" + meaning + " x;\n");
-                morphemeEntry.add(suffix + " s := vp\\vp: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := vp/^vp: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := vp\\^vp: \\x.!" + meaning + " x;\n");
             }
         }
     }
@@ -299,14 +300,14 @@ public class CCGMorphologyLearner {
     public static String EN_VEC = "/Users/ahmetustun/Desktop/nlp-tools/google_vec.bin";
 
     public static String to_be_reduced_data = "data/fin.training/fin.input.txt";
-    public static String training_data = "data/fin.training/fin.input.txt.reduced";
+    public static String training_data = "data/tr.training/tr.input.txt.reduced.300";
     public static String test_data = "data/input.txt";
 
     public static void main(String[] args) throws IOException {
 
-        reduceData(to_be_reduced_data);
+//        reduceData(to_be_reduced_data);
 
-        loadVectors(FIN_VEC, false);
+        loadVectors(TR_VEC, false);
         System.out.println("========== Vector file is loaded ==========");
 
         /*
