@@ -1,5 +1,10 @@
-expletives N PL
-explorations N PL
-extensions N PL
-dynamics' N PL,GEN
-recommendations' N PL,GEN
+abonelikleri N Plu,Acc
+abonelikleri N Plu,P3pl
+adımlarında N Plu,P2sg,Loc
+adımlarında N Plu,P3pl,Loc
+akrepleri N Acc
+akrepleri N P3pl
+açıklamalarıdır N Cop
+aşılarında N Plu,P3sg,Loc
+aşılarında N P3pl,Loc
+bakanlıkların N Plu,Gen

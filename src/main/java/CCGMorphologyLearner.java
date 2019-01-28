@@ -22,7 +22,7 @@ public class CCGMorphologyLearner {
     public static List<String> segmentations = new ArrayList<>();
     public static Set<String> supEntry = new HashSet<>();
 
-    public static String lang = "en";
+    public static String lang = "tr";
 
     /* ================================ Vector Loading =========================================== */
 
@@ -178,13 +178,13 @@ public class CCGMorphologyLearner {
 
         if (pos.equalsIgnoreCase("n")) {
             for (String meaning : semantics) {
-                morphemeEntry.add(suffix + " s := np/^np: \\x.!" + meaning + " x;\n");
-                morphemeEntry.add(suffix + " s := np\\^np: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := np/*np: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := np\\*np: \\x.!" + meaning + " x;\n");
             }
         } else if (pos.equalsIgnoreCase("v")) {
             for (String meaning : semantics) {
-                morphemeEntry.add(suffix + " s := vp/^vp: \\x.!" + meaning + " x;\n");
-                morphemeEntry.add(suffix + " s := vp\\^vp: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := vp/*vp: \\x.!" + meaning + " x;\n");
+                morphemeEntry.add(suffix + " s := vp\\*vp: \\x.!" + meaning + " x;\n");
             }
         }
     }
