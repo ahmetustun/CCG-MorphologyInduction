@@ -39,17 +39,17 @@ gösterim leri nde
 gösterimle ri nde
 gösterimler i nde
 gösterim le ri nde
-aşılar ın da
+aşılar ı nda
 aşı lar ında
-aşıları n da
 aşı ların da
+aşı ları nda
 küfürdü r
 kalb i nden
 sakinler i n i
+araşt ırma larımız
+araştı rma larımız
 ar aştırma larımız
 araştırma lar ımız
-araştı rma larımız
-araştır malarım ız
 sakinler i ni
 sakinleri n i
 aşı lar ı nda
@@ -85,10 +85,10 @@ izin dir
 izindi r
 emsaller i
 emsal ler i
+genç liğin izi
 gençliğini z i
-gençliği ni zi
-gençliği n izi
 genç liğini zi
+gençliği ni zi
 obje ler le
 yakıt ta
 vekil i ni
@@ -110,11 +110,11 @@ vasiyetnamede n
 asbaşkan ı
 önlemler ini n
 önlem leri nin
-önlemleri ni n
 önlem ler inin
-önlem leri n in
-önlemler i n in
+önlemler in in
 önlem ler i nin
+önlemler i ni n
+önlem ler in in
 önlem ler ini n
 rüya mız
 rüyamı z
@@ -124,14 +124,14 @@ de rebeyi
 der ebeyi
 dere beyi
 derebey i
-ürünle r imiz den
-ürün le rim izden
+ürünler i miz den
+ürünle rim iz den
+ürün ler imiz den
 ürünle r im izden
-ürün le rimiz den
 ürünlerimi z den
-ürünle rimiz den
+ürünle rim izden
+ürünleri miz den
 ürünlerim iz den
-ürünler imiz den
 adaleti n
 ilg il ilerle
 ilgil i lerle
@@ -181,16 +181,16 @@ düş e ceğiz
 gerçek ler den
 girdide n
 hal ler
-imparator luklar ı nı
-imparator lu kları nı
+imparatorlu k lar ını
+imparator lukla r ını
 imparator luk ları nı
-imparator luk lar ını
+imparatorluk lar ı nı
 perde de
 ta ramış
-imparatorlu kları nı
-imparatorluk ları nı
-imparatorluklar ı nı
+imparatorluk lar ını
 imparatorlu klar ını
+imparator lukları nı
+imparatorlukla r ını
 al ma ya lım
 at acak tı
 tesadüf ler in
@@ -347,7 +347,7 @@ kaç ma yın
 bir le rine
 birle ri ne
 bi r lerine
-birler in e
+birl e rine
 sorun u nu
 bi r le rine
 bir le ri ne
@@ -417,10 +417,10 @@ füze ler in e
 füze leri n e
 füzeler i n e
 sürpriz ler e
-füze ler ine
+füzeler in e
+füze leri ne
 füzeleri n e
-füze lerin e
-füzeler i ne
+füze ler ine
 hat lar ın
 zarf lar a
 hatlar ın
@@ -450,10 +450,10 @@ kazan ır lar dı
 sebze de
 ayet te
 ayır ır sa k
-fragman ların a
-fragmanlar ı na
 fragmanla rın a
-frag manların a
+fragman ların a
+fragman ları na
+fragmanlar ı na
 fragman la rın a
 fragman lar ı na
 manken ler den
@@ -463,14 +463,14 @@ etken ler in
 etkenler i n
 yazın ız
 köpek ten
-mükellef leri n den
+mükellefleri n de n
+mükellef ler in den
 mükellef leri nde n
 mükellef lerin de n
-mükellefleri n de n
-mükelleflerin de n
+mükellefler i nden
 mükellef ler inden
-mükellefler in den
 mükellefleri nde n
+mükellef leri nden
 mektuplaşma lar
 bursu n
 de me z miş
@@ -491,10 +491,10 @@ doğm a z dı
 daire de
 menü ler
 sahil i
-çalışıyo rsun uz
-çalış ıyor sunuz
 çalışıyor sun uz
+çalış ıyor sunuz
 çalışıyo r sunuz
+çalış ıyorsun uz
 piş miş
 paket e
 kal bim le
@@ -665,7 +665,7 @@ yargı dan
 konseyi n in
 konsey in in
 konseyin i n
-konsey i nin
+konseyi ni n
 mahiyet i ndedir
 teks til inin
 varis ler den
@@ -818,10 +818,10 @@ veri tabanları yla
 bagaj ları n da
 bilimse lliğe
 gerilim den
-kardeşler i ni zle
-kardeşle ri ni zle
+kardeşle r i nizle
 kardeşle rin i zle
-kardeşle r ini zle
+kardeş le rini zle
+kardeş ler i nizle
 verg isi ni
 vergi si ni
 ger ili mden
@@ -857,18 +857,18 @@ dikka tlerin in
 bağımsızlığı nda n
 dikkat leri ni n
 aşkı m
-müzisyenler i yle
-müzisyen le riyle
-müzisyen leri yle
 müzisyen ler iyle
+müzisyenle r iyle
+müzisyen leri yle
+müzisyenler i yle
 ticaret imiz i
 lig in
 müzisyen le r iyle
 müzisyen ler i yle
 müzisyenle r i yle
-yararl ana mayacak
+yararlan a mayacak
 yararla na mayacak
-ya rarlana mayacak
+yar arlana mayacak
 yara rlana mayacak
 kap la mıştı
 haydut ları n
@@ -895,16 +895,16 @@ hisse leri n i
 hisseler i n i
 uğra r sa
 hisse leri ni
-hisse lerin i
-hisseleri n i
 hisseler in i
+hisseleri n i
+hisse lerin i
 öde r iz
 kıl ma dı
 kull a nabiliyordu
 teşvik ler iyle
 teşvik leri yle
 teşvikler i yle
-teşvikle r iyle
+teşvikle ri yle
 önlem idir
 önemseme li
 üz ü l müyorum
@@ -915,10 +915,10 @@ köken ler i
 kökenle r i
 çizgisi nde n
 iste se ler
-tören inde n
+tören in den
 tören i nden
 törenin de n
-töreni nde n
+töreni n den
 gi r eceksin
 gir ecek sin
 şekillenme si
@@ -940,9 +940,9 @@ hitam a
 tekne si ni
 bakanlığı n
 midye nin
-boru ların ı
 boruları n ı
 borular ın ı
+boru ların ı
 boru lar ını
 heyecan ım ı
 heyecanı m ı
@@ -1003,10 +1003,10 @@ damad ı yla
 balçık la
 kalıpta n
 nehri n e
-prim leri ni
-primleri n i
-primler in i
+prim lerin i
 primler i ni
+primleri n i
+prim ler ini
 prim ler i ni
 prim ler in i
 prim leri n i
@@ -1061,10 +1061,10 @@ kişi nin
 kişini n
 başbaka nıydı
 başbakanı ydı
-besinler de n
 besin lerde n
-besinle r den
+besinler de n
 besin ler den
+besinle rde n
 kişi ni n
 cenaze si ne
 katedral de
@@ -1072,10 +1072,10 @@ fetihle r
 te kra rlardan
 tekra r lardan
 sakl ıyo rum
-açılımları n da n
-açılımlar ın da n
+açılım ların da n
 açılımlar ı nda n
 açılım ları nda n
+açılımları n da n
 devreler i n de
 devreler i nde
 devreler in de
@@ -1105,10 +1105,10 @@ deği şme meli
 değiş me meli
 çıkarımla r
 değerlendirm emizi n
-gerç ekleştirile bileceğine
-gerçekl eş tirilebileceğine
+gerçekl eştirile bileceğine
 gerçekleştiril e bileceğine
-gerç ekleş tirilebileceğine
+ge rçekleş tirilebileceğine
+gerçekleştiri le bileceğine
 görev imi n
 görevi mi n
 görevim i n
@@ -1132,10 +1132,10 @@ uzvu n u
 onay ın a
 çam lar la
 çam larla
-soykırımın ı n
-soykırımı nı n
 soykırım ın ın
+soykırımın ı n
 soykırım ı nın
+soykırım ını n
 ağla r lar
 dergah ı
 seçmen ler i
@@ -1226,15 +1226,15 @@ yuvaları dır
 işaretler i n
 yemekhane si
 kemo terapiye
-santral lerini n
-santraller i nin
-santraller ini n
 santralle ri nin
+santralle r inin
+santral ler inin
+santralleri n in
 görüs ün ü
-santralle ri n in
 santralle r ini n
-santraller i n in
-santral lerin i n
+santral leri ni n
+santralle ri n in
+santral ler ini n
 sun muş
 hatıra nın
 kurul da
@@ -1286,10 +1286,10 @@ bil miş ler
 bilm i şler
 aksı yor
 açıkla dı nız
-veriler in i zi
 veriler i ni zi
-verileri n i zi
 veri lerin i zi
+veri ler ini zi
+veri leri ni zi
 yanda ysa
 kurban ın ın
 kurbanı n ın
@@ -1322,18 +1322,18 @@ görevli ler e
 istanbulu n
 süresi zdir
 içki ler e
+ödenti lerin in
 ödenti ler inin
-ödentiler i nin
 ödentileri n in
-ödentileri ni n
+ödenti leri nin
 girişim i nin
 girişim in in
 girişimi ni n
 prenses le
-ödenti ler i nin
-ödenti ler in in
+ödentiler i n in
 ödenti leri n in
-ödenti leri ni n
+ödenti ler in in
+ödentiler i ni n
 ağ ları n da
 çıkmaz ı na
 ağ ları nda
@@ -1417,8 +1417,8 @@ tercihler i nde
 nahiyeler in de
 nahiyeleri n de
 nahiyeler i n de
+tercih ler in de
 tercih ler i nde
-tercihle r in de
 tercihler i n de
 tercihle r i nde
 yu t tum
@@ -1430,9 +1430,9 @@ tercihimdi r
 tercihim di r
 delege si ni
 bölüm leri
-asitler de n
-asitle rde n
 asit ler den
+asitle rde n
+asitler de n
 asitle r den
 filo muz
 ders le rle

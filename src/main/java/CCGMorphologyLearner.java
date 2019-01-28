@@ -191,11 +191,11 @@ public class CCGMorphologyLearner {
 
     public static int lemmaNo = 0;
 
-    public static String getLexicalEntryForLemma(String lemma, String pos) {
+    public static String getLexicalEntryForLemma(String lemma, String pos, String meaning) {
         //String lf = pos + lemmaNo;
         //lemmaNo++;
 
-        String lf = lemma;
+        String lf = meaning;
 
         String tmp = lemma + " " + pos + " := " + pos + "p: !" + lf + ";\n";
 
@@ -235,8 +235,10 @@ public class CCGMorphologyLearner {
 
                 String[] tokens = s.split(" ");
 
+                String root = tokens[0];
+
                 for (String token : tokens) {
-                    lemmaANDpos.add(token + "#" + pos.toLowerCase());
+                    lemmaANDpos.add(token + "#" + pos.toLowerCase() + "#" + root);
                     getLexicalEntryForAffixes(token, tags, pos);
                 }
 
@@ -270,7 +272,7 @@ public class CCGMorphologyLearner {
         ccg.write("% Lemmas\n");
         for (String lemma : lemmaANDpos) {
             String[] lAe = lemma.split("#");
-            ccg.write(getLexicalEntryForLemma(lAe[0], lAe[1]));
+            ccg.write(getLexicalEntryForLemma(lAe[0], lAe[1], lAe[2]));
         }
 
         ccg.write("\n% Affixes\n");
@@ -300,7 +302,7 @@ public class CCGMorphologyLearner {
     public static String EN_VEC = "/Users/ahmetustun/Desktop/nlp-tools/google_vec.bin";
 
     public static String to_be_reduced_data = "data/fin.training/fin.input.txt";
-    public static String training_data = "data/tr.training/tr.input.txt.reduced.300";
+    public static String training_data = "data/tr.training/tr.input.txt.reduced";
     public static String test_data = "data/input.txt";
 
     public static void main(String[] args) throws IOException {

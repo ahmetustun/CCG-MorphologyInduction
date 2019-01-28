@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class FullUnsupervisedSegmentation {
 
-    private static String lang = "en";
+    private static String lang = "tr";
 
     /*
     static {
