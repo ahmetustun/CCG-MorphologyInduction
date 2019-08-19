@@ -78,7 +78,7 @@ public class CCGData {
         FileWriter writer = new FileWriter(outFile);
 
         for (String cat : set) {
-            writer.write(cat+"\n");
+            writer.write(cat.replaceAll("i", "\\$")+"\n");
         }
         writer.close();
     }
@@ -105,11 +105,11 @@ public class CCGData {
                     String[] segments = seg.split(" ");
 
                     // atomic categories
-                    String ac =  segments[0] + ":= !" + segments[0];
+                    String ac =  segments[0] + " p := !" + segments[0];
                     cats.add(ac);
 
                     // Stem categories
-                    String sc = segments[0] + ":= " + pos + ": !" + segments[0];
+                    String sc = segments[0] + " p := " + pos + ": !" + segments[0];
                     cats.add(sc);
 
 
@@ -125,8 +125,8 @@ public class CCGData {
                                 for (int i=1; i<segments.length; i++) {
 
                                     // Affix categories
-                                    String afc1 = segments[i] + ":= " + pos + "\\" + pos + ": \\x.!" + c + " x;";
-                                    String afc2 = segments[i] + ":= " + pos + "/" + pos + ": \\x.!" + c + " x;";
+                                    String afc1 = segments[i] + " p := " + pos + "\\" + pos + ": \\x.!" + c + " x;";
+                                    String afc2 = segments[i] + " p := " + pos + "/" + pos + ": \\x.!" + c + " x;";
                                     cats.add(afc1);
                                     cats.add(afc2);
                                 }
