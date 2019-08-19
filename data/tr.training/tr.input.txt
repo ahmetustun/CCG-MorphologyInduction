@@ -1610,7 +1610,7 @@ zılgıtlarla N Plu,Ins
 şüphelenildiğinde N P3sg,Loc
 dolusunu N P2sg,Acc
 duyarlılıklarınızı N Plu,P2pl,Acc
-fatihinin	,PNoun,2sg,Gen
+fatihinin N 2sg,Gen
 hainidirler V Cop,A3pl
 karşılaşıyorlar N Prog1,A3pl
 sakinlerini N Plu,P2sg,Acc
