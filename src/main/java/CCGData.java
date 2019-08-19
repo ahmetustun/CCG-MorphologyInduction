@@ -134,7 +134,7 @@ public class CCGData {
                             }
 
                             // supervision entries
-                            sup = sup.substring(0, sup.length()-1) + ";";
+                            sup = sup + ";";
                             sups.add(sup);
                         }
                     }
@@ -149,7 +149,7 @@ public class CCGData {
         readSegmentations(tempFile.getAbsolutePath());
         prepareCCG();
         set2file(cats, "data/tr.hdp.seg/tr.ccg");
-        set2file(sups, "data/tr.hdp.seg/tr.pre.sup");
+        set2file(sups, "data/tr.hdp.seg/tr.supervision");
     }
 
 }
