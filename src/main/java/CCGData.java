@@ -92,12 +92,14 @@ public class CCGData {
         4. supervision entries:  SEG: !T1 !T2 !T3
          */
 
+        /*
         if (word2pos.keySet().size() != word2seg.keySet().size()) {
             System.out.println("ERROR: Word mismatch between training file and segmentations file");
             System.exit(100);
         }
+        */
 
-        for (String word : word2seg.keySet()) {
+        for (String word : word2pos.keySet()) {
 
             for (String pos : word2pos.get(word)) {
                 for (String seg : word2seg.get(word)) {
@@ -144,9 +146,11 @@ public class CCGData {
     }
 
     public static void main(String[] args) throws IOException {
-        File tempFile = replaceInFile("data/tr.hdp.seg/wordlist.tur.mc-segmented-train160K.mc-segmented");
+        File tempFile1 = replaceInFile("data/tr.hdp.seg/wordlist.tur.mc-segmented-train160K.mc-segmented");
+        readSegmentations(tempFile1.getAbsolutePath());
+        File tempFile2 = replaceInFile("data/tr.hdp.seg/goldstd_trainset.segments.tur");
+        readSegmentations(tempFile2.getAbsolutePath());
         readTraining("data/tr.training/tr.input.txt");
-        readSegmentations(tempFile.getAbsolutePath());
         prepareCCG();
         set2file(cats, "data/tr.hdp.seg/tr.ccg");
         set2file(sups, "data/tr.hdp.seg/tr.supervision");
