@@ -78,7 +78,7 @@ public class CCGData {
         FileWriter writer = new FileWriter(outFile);
 
         for (String cat : set) {
-            writer.write(cat.replaceAll("i", "\\$")+"\n");
+            writer.write(cat.replaceAll("ı", "\\$")+"\n");
         }
         writer.close();
     }
