@@ -1,6 +1,6 @@
 % Lemmas
-' n := np: !';
-'s n := np: !'s;
+plus n := np: !apost;
+equal n := np: !apost;
 abound v := vp: !abound;
 abus v := vp: !abus;
 accent n := np: !accent;
@@ -1025,14 +1025,14 @@ zenith n := np: !zenith;
 zombie n := np: !zombie;
 
 % Affixes
-' s := np/np: \x.!GEN x;
-' s := np/np: \x.!PL x;
-' s := np\np: \x.!GEN x;
-' s := np\np: \x.!PL x;
-'s s := np/np: \x.!GEN x;
-'s s := np/np: \x.!PL x;
-'s s := np\np: \x.!GEN x;
-'s s := np\np: \x.!PL x;
+plus s := np/np: \x.!GEN x;
+plus s := np/np: \x.!PL x;
+plus s := np\np: \x.!GEN x;
+plus s := np\np: \x.!PL x;
+equal s := np/np: \x.!GEN x;
+equal s := np/np: \x.!PL x;
+equal s := np\np: \x.!GEN x;
+equal s := np\np: \x.!PL x;
 abound s := vp/vp: \x.!PAST x;
 abound s := vp\vp: \x.!PAST x;
 abus s := vp/vp: \x.!PCP1 x;
