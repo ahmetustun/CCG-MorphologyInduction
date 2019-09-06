@@ -1,0 +1,24 @@
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+the usual naming convention (names like *FOO*) for special variables
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+the usual naming convention (names like *FOO*) for special variables
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+STYLE-WARNING: Defining (*TOPCAT*) as a constant, even though the name follows
+the usual naming convention (names like *FOO*) for special variables
+the usual naming convention (names like *FOO*) for special variables
+WARNING:
+   redefining PRINT-OBJECT (#<STRUCTURE-CLASS COMMON-LISP:HASH-TABLE>
+                            #<SB-PCL:SYSTEM-CLASS COMMON-LISP:T>) in DEFMETHOD
+WARNING:
+   redefining PRINT-OBJECT (#<STRUCTURE-CLASS COMMON-LISP:HASH-TABLE>
+                            #<SB-PCL:SYSTEM-CLASS COMMON-LISP:T>) in DEFMETHOD
+WARNING:
+   redefining PRINT-OBJECT (#<STRUCTURE-CLASS COMMON-LISP:HASH-TABLE>
+                            #<SB-PCL:SYSTEM-CLASS COMMON-LISP:T>) in DEFMETHOD
+WARNING:
+   redefining PRINT-OBJECT (#<STRUCTURE-CLASS COMMON-LISP:HASH-TABLE>
+                            #<SB-PCL:SYSTEM-CLASS COMMON-LISP:T>) in DEFMETHOD
+WARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
+WARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
+WARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
+WARNING: redefining COMMON-LISP-USER::PARSE in DEFUN
