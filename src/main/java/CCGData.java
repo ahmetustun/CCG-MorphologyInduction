@@ -1,6 +1,10 @@
 import java.io.*;
 import java.util.*;
 
+/*
+Created by Ahmet Üstün
+ */
+
 public class CCGData {
 
     public static Map<String, Set<String>> word2pos = new HashMap<>();
