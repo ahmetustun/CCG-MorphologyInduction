@@ -79,7 +79,7 @@ public class GenLex {
     public static void prepareCCG() {
 
         /*
-        1. atomic categories: x:= !x
+        DEL > 1. atomic categories: x:= !x
         2. stem categories: x:= POS: !x
         3. affix categories: x:= POS|POS: \x.!TAG x
         4. supervision entries:  SEG: !T1 !T2 !T3
@@ -93,11 +93,11 @@ public class GenLex {
                     String[] segments = seg.split(" ");
 
                     // atomic categories
-                    String ac =  segments[0] + " p := !" + segments[0];
-                    cats.add(ac);
+                    //String ac =  segments[0] + " p := !" + segments[0];
+                    //cats.add(ac);
 
                     // Stem categories
-                    String sc = segments[0] + " p := " + pos + ": !" + segments[0];
+                    String sc = segments[0] + " p := " + pos + ": !" + segments[0] + ";";
                     cats.add(sc);
 
                     for (String tag : word2tags.get(word)) {
